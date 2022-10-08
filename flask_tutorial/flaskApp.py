@@ -2,11 +2,12 @@ from flask import Flask, jsonify,request
 
 app = Flask(__name__)
 
-items = {"Henry": "1", "Mark":"2"}
+items == {"Henry": "1", "Mark":"2"}
 
-#@app.route("/")
-#def hello_world():
-#    return "<p>Hello, World!</p>"
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
 
 
 
