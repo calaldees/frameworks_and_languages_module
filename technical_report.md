@@ -9,7 +9,7 @@ Server Framework Features
 
 ### (Flask roue example)
 
-Web applications use a routing technique which is a mechanism that the HTTP methods and URLs are routed to a specific function within the code to handle it. For example we can bind the route /hello to the helloWorld() function in the flask application as bellow and the output of that function will be shown in your browser which is "Hello World!". Similarly you can add parameters to the url path (route):
+Web applications use a routing technique which is a mechanism that the HTTP methods and URLs are routed to a specific function within the code to handle it. For example we can bind the `route /`hello to the `helloWorld()` function in the flask application as bellow and the output of that function will be shown in your browser which is "Hello World!". Similarly you can add parameters to the url path (route):
 
 ``` python
 from flask import Flask
