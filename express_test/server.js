@@ -1,28 +1,30 @@
 const express = require('express')
 const app = express()
 const port = 8000
+app.use(express.json())
 
-items= {"1":["foo","bar"], "2":["fee", "bar"],"3": ["faa", "bar"]}
+//items= {1:["foo"], 2:["fee",],3: ["faa"]}
+items=[]
+
+
 app.get('/', (req, res) => {
-  res.send({
-    "id": 0,
-    "user_id": "user1234",
-    "keywords": [
-      "hammer",
-      "nails",
-      "tools"
-    ],
-    "description": "A hammer and nails set",
-    "image": "https://placekitten.com/200/300",
-    "lat": 51.2798438,
-    "lon": 1.0830275,
-    "date_from": "2022-10-09T21:44:28.396Z",
-    "date_to": "2022-10-09T21:44:28.396Z"
-  })
+  res.send('hello world')
+})
+  
+app.get('/items', (req,res)=>{
+  res.send(items)
+  res.status(200).json(items)
 })
 
-app.get('/items', (req,res)=>{
-  res.json(items)
+app.post('/item', (req,res)=>{
+    items.push(req.body)
+    res.status(201).json(items)
+})
+
+app.delete('/item/:itemId',(req,res)=>{
+  items= items.filter(obj => obj.itemId !== parseFloat(req.params.itemId))
+  res.status(204).json()
+
 })
 
 app.listen(port, () => {
