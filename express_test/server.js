@@ -2,8 +2,14 @@ const express = require('express')
 const app = express()
 const port = 8000
 app.use(express.json())
+/*
+curl -v -X POST    http://localhost:8000/item -H "Content-Type: application/json" -d '{"id:0, "user_id": "user1234", "keywords": [ "hammer", "nails", "tools"],   "description": "A hammer and nails set",  "image": "https://placekitten.com/200/300",   "lat": 51.2798438,"lon": 1.0830275, "date_from": "2022-10-14T21:06:55.540Z", "date_to": "2022-10-14T21:06:55.540Z" }'
+curl -v -X GET     http://localhost:8000/items
+curl -v -X GET     http://localhost:8000/item/123
+curl -v -X DELETE  http://localhost:8000/item/123
+curl -v -X OPTIONS http://localhost:8000/
+*/
 
-//items= {1:["foo"], 2:["fee",],3: ["faa"]}
 items=[{"id": 123, "name": "test", "notes": "some notes"}]
 myItems=[]
 deletedItem=[]
