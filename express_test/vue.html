@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,....==" />
+    <title>FreeCycle</title>
+    <style>
+
+    /* styles here */
+
+    </style>
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>FreeCycle</h1>
+
+    <div id="app">
+      {{ message }}
+      <form @:submit.prevent="addItem">
+        <label>UserName</label>
+        <input name="name" type ="text" placeholder="name">
+
+        <label>lat</label>
+        <input name="lat" type="text">
+
+        <label>lon</label>
+        <input name="lon" type="text">
+
+        <label>image</label>
+        <input name="image" type="text" value="https://placekitten.com/200/300">
+
+        <label>Keywords</label>
+        <input name="keywords" type="text">
+
+        <label>Description</label>
+        <textarea></textarea>
+        <button>Submit</button>
+      </form>
+
+    </div>
+
+<script type="module">
+
+const { createApp } = Vue
+
+createApp({
+  data() {
+    return {
+      message: 'New Item'
+    }
+  },
+  methods:{
+    addItem(){
+      console.log("Item added")
+    }
+  }
+}).mount('#app')
+
+</script>
+</body>
+</html>
