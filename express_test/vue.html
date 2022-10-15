@@ -42,6 +42,26 @@
 <script type="module">
 
 const { createApp } = Vue
+let urlAPI =  '' //'https://8000-reem313-frameworksandla-lt146dhjlm1.ws-eu71.gitpod.io'
+
+let testItem = {
+    user_id: "bob",
+    lat: 1,
+    lon: 1,
+    image: "http://placekitten.com/100/100",
+    keywords: "a, b, c",
+    description: "a test item that is great",
+}
+function createItem(data) {
+    fetch(`${urlAPI}/item`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(json => console.log('createItems()', json))
+    .catch(err => console.error(err));
+}
 
 createApp({
   data() {
@@ -52,6 +72,7 @@ createApp({
   methods:{
     addItem(){
       console.log("Item added")
+      createItem(testItem)
     }
   }
 }).mount('#app')
