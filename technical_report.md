@@ -7,7 +7,7 @@ Technical Report
 Server Framework Features
 -------------------------
 
-### (Flask roue example)
+### (Express route example)
 
 Web applications use a routing technique which is a mechanism that the HTTP methods and URLs are routed to a specific function within the code to handle it. For example we can bind the `route /`hello to the `helloWorld()` function in the flask application as bellow and the output of that function will be shown in your browser which is "Hello World!". Similarly you can add parameters to the url path (route):
 
@@ -27,13 +27,22 @@ This is especially useful to give a meaningful url to the web application and to
 - Web Development with Node and Express by Ethan Brown [Online]. Web Development with Node and Express [Book]. Available at: www.oreilly.com/library/view/web-development-with/9781491902288/ch14.html (Accessed: 9 October 2022).
 
 
-### (name of Feature 2)
+### (Middleware)
 
-(Technical description of the feature - 40ish words - 1 mark)
-(A code block snippet example demonstrating the feature - 1 mark)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words - 1 mark)
-(Provide reference urls to your sources of information about the feature - required)
+In Express framework Middleware are functions that are called to process a specific task after the server receives a request from the client and before the response is sent back. for example we use the built-in middleware in Express to json the data that is received from the requests as shown in the snippet code bellow
+``` JavaScript
+app.post('/item', (req,res)=>{
+  
+    items.push(req.body)
+    return res.status(201).json(items)
+})
+```
+The route above with url ```/item```  in the application accepts an item data in JSON format, So we use the built-in middleware ```express.json``` for parsing the incoming JSON payload and attach it to the router object.
 
+### References:
+
+- T. Hombergs, (2022). Complete Guide to Express Middleware [Online]. Available at: reflectoring.io/express-middleware/ (Accessed: 15 October 2022).
+ - Using Express middleware [Online]. Available at: expressjs.com/en/guide/using-middleware.html (Accessed: 15 October 2022).
 
 ### (name of Feature 3)
 
