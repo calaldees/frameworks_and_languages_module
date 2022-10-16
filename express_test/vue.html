@@ -18,24 +18,36 @@
       {{ message }}
       <form @:submit.prevent="addItem">
         <label>UserName</label>
-        <input name="name" type ="text" placeholder="name">
+        <input v-model="item.username" name="name" type ="text" placeholder="name">
 
         <label>lat</label>
-        <input name="lat" type="text">
+        <input v-model="item.lat"  name="lat" type="text">
 
         <label>lon</label>
-        <input name="lon" type="text">
+        <input v-model="item.lon" name="lon" type="text">
 
         <label>image</label>
-        <input name="image" type="text" value="https://placekitten.com/200/300">
+        <input v-model="item.image" name="image" type="text" value="https://placekitten.com/200/300">
 
         <label>Keywords</label>
-        <input name="keywords" type="text">
+        <input v-model="item.keywords" name="keywords" type="text">
 
         <label>Description</label>
-        <textarea></textarea>
+        <textarea v-model="item.description" ></textarea>
         <button>Submit</button>
       </form>
+
+      <ul>
+        <li v-for="item in items">
+            <span>{{item.user_id}}</span>
+            <span>{{item.lat}}</span>
+            <span>{{item.lon}}</span>
+            <span>{{item.image}}</span>
+            <span>{{item.keywords}}</span>
+            <span>{{item.description}}</span>
+            <span>{{item.time}}</span>
+        </li>
+    </ul>
 
     </div>
 
@@ -52,30 +64,67 @@ let testItem = {
     keywords: "a, b, c",
     description: "a test item that is great",
 }
-function createItem(data) {
-    fetch(`${urlAPI}/item`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data),
-    })
-        .then(response => response.json())
-        .then(json => console.log('createItems()', json))
-    .catch(err => console.error(err));
-}
 
 createApp({
   data() {
     return {
-      message: 'New Item'
+      item:{
+        id: Math.random(),
+        user_id:'',
+        lat:'',
+        lon:'',
+        image:'',
+        keywords:'',
+        description:'',
+        time: Date.now(),
+      },
+      items: [],
+
+      message: 'New Item',
     }
   },
-  methods:{
-    addItem(){
-      console.log("Item added")
-      createItem(testItem)
-    }
+  created(){
+    this.clearItem()
+    this.getItems()
+  },
+  methods: {
+    clearItem(){
+      this.item ={...this.item, ...{
+        item:{
+        id: Math.random(),
+        user_id:'',
+        lat:'',
+        lon:'',
+        image:'',
+        keywords:'',
+        description:'',
+        date: Date.now(),
+      }}
+    },
+    addItem();{
+      fetch(`${urlAPI}/item`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(this.item),
+      })
+        .then(response => response.json())
+        .then(json => console.log('addItem()', json))
+        .then(this.clearItem)
+        .then(this.getItems)
+      .catch(err => console.error(err))
+    },
+
+    getItems() {
+    fetch(`${urlAPI}/items`, {
+        method: 'GET',
+    })
+        .then(response => response.json())
+        .then(data=> this.attendees=data)
+    .catch(err => console.error(err))
+  },
   }
-}).mount('#app')
+})
+.mount('#app')
 
 </script>
 </body>
