@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0000" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-10-17T11:48:48" tests="0" file="cypress/google.spec.cy.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Google" timestamp="2022-10-17T11:48:48" tests="1" time="0.0000" failures="1">
+    <testcase name="Google Search for university webpage and check university logo is present" time="0.0000" classname="Search for university webpage and check university logo is present">
+      <failure message="Oops, it looks like you are trying to call a child command before running a parent command.
+
+You wrote code that looks like this:
+
+``cy.type(&quot;Canterbury Chirt Chuch&quot;)``
+
+A child command must be chained after a parent because it operates on a previous subject.
+
+For example - if we were issuing the child command `click`...
+
+cy
+  .get(&apos;button&apos;) // parent command must come first
+  .click()       // then child command comes second" type="CypressError"><![CDATA[CypressError: Oops, it looks like you are trying to call a child command before running a parent command.
+
+You wrote code that looks like this:
+
+``cy.type("Canterbury Chirt Chuch")``
+
+A child command must be chained after a parent because it operates on a previous subject.
+
+For example - if we were issuing the child command `click`...
+
+cy
+  .get('button') // parent command must come first
+  .click()       // then child command comes second
+    at $Cy.validateFirstCall (https://www.google.co.uk/__cypress/runner/cypress_runner.js:157876:68)
+    at wrapped (https://www.google.co.uk/__cypress/runner/cypress_runner.js:157378:14)
+From Your Spec Code:
+    at Context.eval (webpack:///./cypress/google.spec.cy.js:5:11)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

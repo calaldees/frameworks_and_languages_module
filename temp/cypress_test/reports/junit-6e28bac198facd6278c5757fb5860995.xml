@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0000" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-10-17T13:46:00" tests="0" file="cypress/google.spec.cy.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Google" timestamp="2022-10-17T13:46:00" tests="1" time="0.0000" failures="1">
+    <testcase name="Google Search for university webpage and check university logo is present" time="0.0000" classname="Search for university webpage and check university logo is present">
+      <failure message="`cy.visit()` failed trying to load:
+
+https://site/
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: getaddrinfo ENOTFOUND site
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+https://site/
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: getaddrinfo ENOTFOUND site
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+    at <unknown> (https://www.google.co.uk/__cypress/runner/cypress_runner.js:142216:82)
+    at visitFailedByErr (https://www.google.co.uk/__cypress/runner/cypress_runner.js:141504:12)
+    at <unknown> (https://www.google.co.uk/__cypress/runner/cypress_runner.js:142215:11)
+    at tryCatcher (https://www.google.co.uk/__cypress/runner/cypress_runner.js:11318:23)
+    at Promise._settlePromiseFromHandler (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9253:31)
+    at Promise._settlePromise (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9310:18)
+    at Promise._settlePromise0 (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9355:10)
+    at Promise._settlePromises (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9431:18)
+    at _drainQueueStep (https://www.google.co.uk/__cypress/runner/cypress_runner.js:6025:12)
+    at _drainQueue (https://www.google.co.uk/__cypress/runner/cypress_runner.js:6018:9)
+    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://www.google.co.uk/__cypress/runner/cypress_runner.js:6034:5)
+    at Async.drainQueues (https://www.google.co.uk/__cypress/runner/cypress_runner.js:5904:14)
+From Your Spec Code:
+    at Context.eval (webpack:///./cypress/google.spec.cy.js:6:11)
+
+From Node.js Internals:
+  Error: getaddrinfo ENOTFOUND site
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

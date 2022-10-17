@@ -1,6 +1,6 @@
-#FROM alpine
-#newLineTest
-#practice
-#WORKDIR /app/
-FROM python:slim
-CMD ["python", "-m", "http.server"]
+FROM node:alpine
+WORKDIR /app/
+COPY package.json ./
+RUN npm install
+COPY . .
+ENTRYPOINT ["node", "server.js"]

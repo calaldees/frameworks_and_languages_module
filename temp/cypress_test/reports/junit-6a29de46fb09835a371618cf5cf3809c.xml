@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0000" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-10-17T13:54:10" tests="0" file="cypress/google.spec.cy.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Google" timestamp="2022-10-17T13:54:10" tests="1" time="0.0000" failures="1">
+    <testcase name="Google Search for university webpage and check university logo is present" time="0.0000" classname="Search for university webpage and check university logo is present">
+      <failure message="Timed out retrying after 4000ms: `cy.should()` failed because this element is detached from the DOM.
+
+`&lt;input class=&quot;gLFyf gsfi&quot; jsaction=&quot;paste:puy29d;&quot; maxlength=&quot;2048&quot; name=&quot;q&quot; type=&quot;text&quot; aria-autocomplete=&quot;both&quot; aria-haspopup=&quot;false&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; autofocus=&quot;&quot; role=&quot;combobox&quot; spellcheck=&quot;false&quot; title=&quot;Search&quot; value=&quot;&quot; aria-label=&quot;Search&quot; data-ved=&quot;0ahUKEwjBsNj7tOf6AhXmg84BHXaSA7QQ39UDCAQ&quot;&gt;`
+
+Cypress requires elements be attached in the DOM to interact with them.
+
+The previous command that ran was:
+
+  &gt; `cy.get()`
+
+This DOM element likely became detached somewhere between the previous and current command.
+
+Common situations why this happens:
+  - Your JS framework re-rendered asynchronously
+  - Your app code reacted to an event firing and removed the element
+
+You typically need to re-query for the element or add &apos;guards&apos; which delay Cypress from running new commands.
+
+https://on.cypress.io/element-has-detached-from-dom" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4000ms: `cy.should()` failed because this element is detached from the DOM.
+
+`<input class="gLFyf gsfi" jsaction="paste:puy29d;" maxlength="2048" name="q" type="text" aria-autocomplete="both" aria-haspopup="false" autocapitalize="off" autocomplete="off" autocorrect="off" autofocus="" role="combobox" spellcheck="false" title="Search" value="" aria-label="Search" data-ved="0ahUKEwjBsNj7tOf6AhXmg84BHXaSA7QQ39UDCAQ">`
+
+Cypress requires elements be attached in the DOM to interact with them.
+
+The previous command that ran was:
+
+  > `cy.get()`
+
+This DOM element likely became detached somewhere between the previous and current command.
+
+Common situations why this happens:
+  - Your JS framework re-rendered asynchronously
+  - Your app code reacted to an event firing and removed the element
+
+You typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.
+
+https://on.cypress.io/element-has-detached-from-dom
+    at $Cy.ensureAttached (https://www.google.co.uk/__cypress/runner/cypress_runner.js:147481:76)
+    at applyChainers (https://www.google.co.uk/__cypress/runner/cypress_runner.js:138675:12)
+    at tryCatcher (https://www.google.co.uk/__cypress/runner/cypress_runner.js:11318:23)
+    at Promise.attempt.Promise.try (https://www.google.co.uk/__cypress/runner/cypress_runner.js:8592:29)
+    at Context.shouldFn (https://www.google.co.uk/__cypress/runner/cypress_runner.js:138707:63)
+    at Context.should (https://www.google.co.uk/__cypress/runner/cypress_runner.js:138726:23)
+    at <unknown> (https://www.google.co.uk/__cypress/runner/cypress_runner.js:133703:39)
+    at assertions (https://www.google.co.uk/__cypress/runner/cypress_runner.js:133968:16)
+    at tryCatcher (https://www.google.co.uk/__cypress/runner/cypress_runner.js:11318:23)
+    at Object.gotValue (https://www.google.co.uk/__cypress/runner/cypress_runner.js:10462:18)
+    at Object.gotAccum (https://www.google.co.uk/__cypress/runner/cypress_runner.js:10449:25)
+    at Object.tryCatcher (https://www.google.co.uk/__cypress/runner/cypress_runner.js:11318:23)
+    at Promise._settlePromiseFromHandler (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9253:31)
+    at Promise._settlePromise (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9310:18)
+    at Promise._settlePromiseCtx (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9347:10)
+    at _drainQueueStep (https://www.google.co.uk/__cypress/runner/cypress_runner.js:6029:12)
+    at _drainQueue (https://www.google.co.uk/__cypress/runner/cypress_runner.js:6018:9)
+    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://www.google.co.uk/__cypress/runner/cypress_runner.js:6034:5)
+    at Async.drainQueues (https://www.google.co.uk/__cypress/runner/cypress_runner.js:5904:14)
+From Your Spec Code:
+    at Context.eval (webpack:///./cypress/google.spec.cy.js:6:11)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

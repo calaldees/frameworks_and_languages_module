@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0000" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-10-17T14:11:46" tests="0" file="cypress/google.spec.cy.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Google" timestamp="2022-10-17T14:11:46" tests="1" time="0.0000" failures="1">
+    <testcase name="Google Search for university webpage and check university logo is present" time="0.0000" classname="Search for university webpage and check university logo is present">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;onetrust-accept-btn-handler&apos; within the element: [ &lt;button.btn&gt;, 26 more... ] but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'onetrust-accept-btn-handler' within the element: [ <button.btn>, 26 more... ] but never did.
+    at Context.eval (webpack:///./cypress/google.spec.cy.js:7:25)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

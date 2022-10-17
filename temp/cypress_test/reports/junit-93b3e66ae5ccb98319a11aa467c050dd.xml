@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0000" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-10-17T13:35:21" tests="0" file="cypress/google.spec.cy.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Google" timestamp="2022-10-17T13:35:21" tests="1" time="0.0000" failures="1">
+    <testcase name="Google Search for university webpage and check university logo is present" time="0.0000" classname="Search for university webpage and check university logo is present">
+      <failure message="Timed out retrying after 4000ms: `cy.type()` failed because this element:
+
+`&lt;input class=&quot;gLFyf gsfi&quot; jsaction=&quot;paste:puy29d;&quot; maxlength=&quot;2048&quot; name=&quot;q&quot; type=&quot;text&quot; aria-autocomplete=&quot;both&quot; aria-haspopup=&quot;false&quot; autocapitalize=&quot;off&quot; autocomplete=&quot;off&quot; autocorrect=&quot;off&quot; autofocus=&quot;&quot; role=&quot;combobox&quot; spellcheck=&quot;false&quot; title=&quot;Search&quot; value=&quot;&quot; aria-label=&quot;Search&quot; data-ved=&quot;0ahUKEwjFsvzhsOf6AhVMaBoKHbdwA3sQ39UDCAQ&quot;&gt;`
+
+is being covered by another element:
+
+`&lt;li class=&quot;gowsYd e21Mac&quot;&gt;Show pe...&lt;/li&gt;`
+
+Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with" type="CypressError"><![CDATA[CypressError: Timed out retrying after 4000ms: `cy.type()` failed because this element:
+
+`<input class="gLFyf gsfi" jsaction="paste:puy29d;" maxlength="2048" name="q" type="text" aria-autocomplete="both" aria-haspopup="false" autocapitalize="off" autocomplete="off" autocorrect="off" autofocus="" role="combobox" spellcheck="false" title="Search" value="" aria-label="Search" data-ved="0ahUKEwjFsvzhsOf6AhVMaBoKHbdwA3sQ39UDCAQ">`
+
+is being covered by another element:
+
+`<li class="gowsYd e21Mac">Show pe...</li>`
+
+Fix this problem, or use {force: true} to disable error checking.
+
+https://on.cypress.io/element-cannot-be-interacted-with
+    at $Cy.ensureDescendents (https://www.google.co.uk/__cypress/runner/cypress_runner.js:147610:78)
+    at ensureDescendents (https://www.google.co.uk/__cypress/runner/cypress_runner.js:133073:8)
+    at ensureDescendentsAndScroll (https://www.google.co.uk/__cypress/runner/cypress_runner.js:133080:14)
+    at ensureElIsNotCovered (https://www.google.co.uk/__cypress/runner/cypress_runner.js:133212:5)
+    at runAllChecks (https://www.google.co.uk/__cypress/runner/cypress_runner.js:133402:52)
+    at retryActionability (https://www.google.co.uk/__cypress/runner/cypress_runner.js:133426:16)
+    at tryCatcher (https://www.google.co.uk/__cypress/runner/cypress_runner.js:11318:23)
+    at Promise.attempt.Promise.try (https://www.google.co.uk/__cypress/runner/cypress_runner.js:8592:29)
+    at whenStable (https://www.google.co.uk/__cypress/runner/cypress_runner.js:152675:65)
+    at <unknown> (https://www.google.co.uk/__cypress/runner/cypress_runner.js:152105:14)
+    at tryCatcher (https://www.google.co.uk/__cypress/runner/cypress_runner.js:11318:23)
+    at Promise._settlePromiseFromHandler (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9253:31)
+    at Promise._settlePromise (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9310:18)
+    at Promise._settlePromise0 (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9355:10)
+    at Promise._settlePromises (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9435:18)
+    at Promise._fulfill (https://www.google.co.uk/__cypress/runner/cypress_runner.js:9379:18)
+    at <unknown> (https://www.google.co.uk/__cypress/runner/cypress_runner.js:10993:46)
+From Your Spec Code:
+    at Context.eval (webpack:///./cypress/google.spec.cy.js:5:40)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
