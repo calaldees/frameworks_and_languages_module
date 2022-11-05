@@ -74,12 +74,36 @@ Server Language Features
 Client Framework Features
 -------------------------
 
-### (name of Feature 1)
+### (Event Handling)
 
-(Technical description of the feature - 40ish words - 1 mark)
-(A code block snippet example demonstrating the feature - 1 mark)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words - 1 mark)
+Vue event handling is a necessary aspect of every Vue project, using the v-on directive or @ for short, it allow us to listen to DOM events and run either an event handler method or run JavaScript code when triggered. Vue handler could be: Inline handlers: to be executed when the event is triggered. Method handlers: A path that points to a method defined on the component.
+Inline handler:
+``` JavaScript
+<form @:submit.prevent="addItem">
+```
+Method handlers:
+
+```JavaScript
+  methods: {
+    clearItem(){
+      this.item ={...this.item, ...{
+        item:{
+        id: Math.random(),
+        user_id:'',
+        lat:'',
+        lon:'',
+        image:'',
+        keywords:'',
+        description:'',
+        date: Date.now(),
+      }}
+```
+This allow us to handle user input, or add dynamic functionality to the app 
+
+### References:
+- https://vuejs.org/guide/essentials/event-handling.html#calling-methods-in-inline-handlers
 (Provide reference urls to your sources of information about the feature - required)
+- https://v2.vuejs.org/v2/guide/events.html
 
 
 ### (name of Feature 2)

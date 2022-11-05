@@ -56,14 +56,14 @@
 const { createApp } = Vue
 let urlAPI =  '' //'https://8000-reem313-frameworksandla-lt146dhjlm1.ws-eu71.gitpod.io'
 
-let testItem = {
+let testItem = {0:{
     user_id: "bob",
     lat: 1,
     lon: 1,
     image: "http://placekitten.com/100/100",
     keywords: "a, b, c",
     description: "a test item that is great",
-}
+}}
 
 createApp({
   data() {
@@ -78,7 +78,7 @@ createApp({
         description:'',
         time: Date.now(),
       },
-      items: [],
+      items: {},
 
       message: 'New Item',
     }

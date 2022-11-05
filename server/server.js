@@ -45,11 +45,12 @@ let items = {
     }
   }
   // get the max id //https://bobbyhadz.com/blog/javascript-get-max-id-in-array-of-objects
-const ids = items.map(object => {
+  /*
+  const ids = items.map(object => {
     return object.id;
   });
 const NEXT_ID = Math.max(...ids)+1;
-
+*/
 
 
 app.get('/', (req, res) => {
