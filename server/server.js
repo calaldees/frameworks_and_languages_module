@@ -26,7 +26,7 @@ curl -v -X GET http://localhost:8000/items
 curl -v -X GET http://localhost:8000/item/0
 curl -v -X DELETE  http://localhost:8000/item/1
 curl -v -X OPTIONS http://localhost:8000/
-*/
+
 let items = {
   0: {
     
@@ -44,6 +44,9 @@ let items = {
       "date_to": "2022-10-31T16:54:59.391Z"
     }
   }
+  */
+
+  let items={}
   // get the max id //https://bobbyhadz.com/blog/javascript-get-max-id-in-array-of-objects
   /*
   const ids = items.map(object => {
@@ -58,10 +61,9 @@ app.get('/', (req, res) => {
 })
   
 app.get('/items' ,(req,res)=>{
-  console.log("I got my items", res.statusCode)
   res.status(200)
-  res.json(items)
-  
+  let ITEMS= Object.values(items) //https://medium.com/@anshurajlive/read-dictionary-data-or-convert-dictionary-into-an-array-of-objects-in-javascript-e9c52286d746
+  res.json(ITEMS)
 })
 
 app.get('/item/:id',(req,res)=>{
@@ -81,23 +83,9 @@ app.get('/item/:id',(req,res)=>{
 })
 
 app.post('/item', (req,res)=>{
-  RequiredFields = ['user_id','keywords','description','lat','lon']
-  if (Object.keys(req.body).toString() !== 'user_id,keywords,description,lat,lon') {
-    return res.status(405).json({message: 'there is missing fields'})
- }
- items.keys()
-  newItem.id=NEXT_ID
-  newItem.user_id=Object.keys(req.body).user_id
-  newItem.keywords= Object.keys(req.body).keywords
-  newItem.description=Object.keys(req.body).description
-  newItem.lat=Object.keys(req.body).lat
-  newItem.lon=Object.keys(req.body).lon
-  newItem.date_from=new Date().toISOString().slice(0, 10)
-
-  //Object.assign(items, newItem)
-  
-  console.log("I got a post")
-  res.statusCode(201).json(items)
+ req.body.id=
+  console.log("this is post", items)
+  res.status(201).json(items)
 })
 
 app.delete('/item/:id',(req,res)=>{
