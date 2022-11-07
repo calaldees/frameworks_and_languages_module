@@ -28,7 +28,7 @@ curl -v -X DELETE  http://localhost:8000/item/1
 curl -v -X OPTIONS http://localhost:8000/
 */
 let items = {
-  27: {
+  0: {
     
       "user_id": "user1234",
       "keywords": [
@@ -44,41 +44,53 @@ let items = {
       "date_to": "2022-10-31T16:54:59.391Z"
     }
   }
-  
-
-  //let items={}
-  // get the max id //https://bobbyhadz.com/blog/javascript-get-max-id-in-array-of-objects
-  /*
-  const ids = items.map(object => {
-    return object.id;
-  });
-const NEXT_ID = Math.max(...ids)+1;
-*/
-
 
 app.get('/', (req, res) => {
   return res.status(200).send('<html><body>Your HTML text</body></html>')
 })
-  
+/* 
 app.get('/items' ,(req,res)=>{
+  res.status(200)
+  let ITEMS= Object.values(items) //https://medium.com/@anshurajlive/read-dictionary-data-or-convert-dictionary-into-an-array-of-objects-in-javascript-e9c52286d746
+  res.json(ITEMS)
+  //filter items by user_id
+  let userItem=[]
+  for (i in items)
+  {
+    if (items[i].user_id === req.query.user_id)
+    {
+      userItem.push(items[i])
+    }
+    else{
+
+    }
+  }
+})
+*/
+app.get('/items' ,(req,res)=>{
+  //filter items by user_id
+
+  if (req.query.user_id)
+  {
+    let userItem=[]
+    userItem= items.filter(obj => obj.user_id === (req.query.user_id))
+    res.json(userItem)
+  }
   res.status(200)
   let ITEMS= Object.values(items) //https://medium.com/@anshurajlive/read-dictionary-data-or-convert-dictionary-into-an-array-of-objects-in-javascript-e9c52286d746
   res.json(ITEMS)
 })
 
-app.get('/item/:id',(req,res)=>{
-  
-  if (items[req.params.id]=== undefined)
+
+app.get('/item/:id',(req,res)=>{ 
+  if (Object.keys(items).includes(req.params.id))
   {
-    console.log("I didn't get my item")
-    res.status(404)
-    res.send("Item not found")
+    res.status(200)
+    res.json(items[req.params.id]) 
   }
   else
   {
-    res.status(200)
-    res.json(items[req.params.id])
-    console.log("I got my item")
+    res.status(404).json("Item not found")
   }
 })
 
@@ -89,11 +101,12 @@ app.post('/item', (req,res)=>{
     return res.status(405).json({message: 'there is missing fields'})
   }
   else{
-  ID= Math.max( ...Object.keys(items)) +1
-  req.body.id=ID
+  ID= parseInt( Math.max( ...Object.keys(items)) +1);
+  req.body.id=ID;
   req.body.date_from= new Date().toISOString().slice(0, 10)
   items[ID]=req.body;
   res.status(201).json(req.body)
+  console.log(items[ID])
   }
 })
 
