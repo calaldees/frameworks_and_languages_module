@@ -98,15 +98,13 @@ app.post('/item', (req,res)=>{
 })
 
 app.delete('/item/:id',(req,res)=>{
-  if (items[req.params.id]=== undefined)
+  if ( Object.keys(items).includes(req.params.id))
   {
-    res.status(404).json("Item not found")
-    console.log("not Found")
+    delete[items[req.params.id]]    //https://www.tutorialspoint.com/Remove-elements-from-a-Dictionary-using-Javascript#:~:text=To%20remove%20an%20element%20from,it%20using%20the%20delete%20operator.
+    res.status(204).json("OK")
   }
-  else{
-    delete[req.params.id] //https://www.tutorialspoint.com/Remove-elements-from-a-Dictionary-using-Javascript#:~:text=To%20remove%20an%20element%20from,it%20using%20the%20delete%20operator.
-    res.status(204)
-      console.log(" found")
+  else{ 
+    res.status(404).json("Item not found")
   }
 
 })
