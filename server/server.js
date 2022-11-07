@@ -28,7 +28,7 @@ curl -v -X DELETE  http://localhost:8000/item/1
 curl -v -X OPTIONS http://localhost:8000/
 */
 let items = {
-  0: {
+  27: {
     
       "user_id": "user1234",
       "keywords": [
@@ -84,12 +84,11 @@ app.get('/item/:id',(req,res)=>{
 
 //https://medium.com/@anshurajlive/read-dictionary-data-or-convert-dictionary-into-an-array-of-objects-in-javascript-e9c52286d746
 app.post('/item', (req,res)=>{
-  ID= (parseInt((Object.keys(items))))
-  
-  items[ID]= req.body
-  items[ID].date_from = Date.now();
-  console.log("this is post", ID)
-  res.status(201).json(items)
+  ID= Math.max( ...Object.keys(items)) +1
+  req.body.id=ID
+  req.body.date_from= new Date().toISOString().slice(0, 10)
+  items[ID]=req.body;
+  res.status(201).json(req.body)
 })
 
 app.delete('/item/:id',(req,res)=>{
