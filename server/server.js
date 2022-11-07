@@ -26,7 +26,7 @@ curl -v -X GET http://localhost:8000/items
 curl -v -X GET http://localhost:8000/item/0
 curl -v -X DELETE  http://localhost:8000/item/1
 curl -v -X OPTIONS http://localhost:8000/
-
+*/
 let items = {
   0: {
     
@@ -44,9 +44,9 @@ let items = {
       "date_to": "2022-10-31T16:54:59.391Z"
     }
   }
-  */
+  
 
-  let items={}
+  //let items={}
   // get the max id //https://bobbyhadz.com/blog/javascript-get-max-id-in-array-of-objects
   /*
   const ids = items.map(object => {
@@ -82,9 +82,13 @@ app.get('/item/:id',(req,res)=>{
   }
 })
 
+//https://medium.com/@anshurajlive/read-dictionary-data-or-convert-dictionary-into-an-array-of-objects-in-javascript-e9c52286d746
 app.post('/item', (req,res)=>{
- req.body.id=
-  console.log("this is post", items)
+  ID= (parseInt((Object.keys(items))))
+  
+  items[ID]= req.body
+  items[ID].date_from = Date.now();
+  console.log("this is post", ID)
   res.status(201).json(items)
 })
 
@@ -100,26 +104,7 @@ app.delete('/item/:id',(req,res)=>{
       console.log(" found")
   }
 
-/*
-    if(items.filter(obj => obj.id === parseFloat(req.params.id)))
-    {
-      items= items.filter(obj => obj.id !== parseFloat(req.params.id))
-      res.status(204).json("OK")
-      console.log(" found")
-    }
-    else if (items.filter(obj => obj.id !== parseFloat(req.params.id)))
-    {
-      res.status(404).json("Item not found")
-      console.log("not Found")
-    }
-
-  */
 })
-/*
-app.all('*', (req, res) => {
-  res.status(404).send('<h1>404! Page not found</h1>');
-});
-*/
 
 app.use((req, res, next) => {
   res.status(404).send("Sorry can't find that!")
