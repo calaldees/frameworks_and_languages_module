@@ -68,17 +68,16 @@ app.get('/items' ,(req,res)=>{
 })
 */
 app.get('/items' ,(req,res)=>{
-  //filter items by user_id
-
-  if (req.query.user_id)
-  {
-    let userItem=[]
-    userItem= items.filter(obj => obj.user_id === (req.query.user_id))
-    res.json(userItem)
-  }
-  res.status(200)
-  let ITEMS= Object.values(items) //https://medium.com/@anshurajlive/read-dictionary-data-or-convert-dictionary-into-an-array-of-objects-in-javascript-e9c52286d746
-  res.json(ITEMS)
+    let userItem= items.filter(obj => obj.user_id === (req.query.user_id))
+    if (parseInt(Object.keys(userItem)).length>0)
+    {
+      res.status(200).json(Object.values(userItem))
+    }
+  else{
+    res.status(404).json("user not exist")
+}
+let ITEMS= Object.values(items) //https://medium.com/@anshurajlive/read-dictionary-data-or-convert-dictionary-into-an-array-of-objects-in-javascript-e9c52286d746
+res.status(200).json(ITEMS)
 })
 
 
@@ -105,8 +104,9 @@ app.post('/item', (req,res)=>{
   req.body.id=ID;
   req.body.date_from= new Date().toISOString().slice(0, 10)
   items[ID]=req.body;
-  res.status(201).json(req.body)
-  console.log(items[ID])
+  //res.status(201).json(req.body)
+  res.status(201).json(items[req.body.id])
+  console.log(items[req.body.id])
   }
 })
 
