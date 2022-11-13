@@ -55,12 +55,23 @@ The route above with url ```/item```  in the application accepts an item data in
 Server Language Features
 -----------------------
 
-### (name of Feature 1)
+### (The `Let` Keyword)
 
-(Technical description of the feature - 40ish words - 1 mark)
-(A code block snippet example demonstrating the feature - 1 mark)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words - 1 mark)
-(Provide reference urls to your sources of information about the feature - required)
+The keyword `let` in JavaScript was introduced in ECMAScript 2015 to provide the variables with the following features:
+* Cannot be accidentally redeclared
+* Have Block Scope.
+* cannot be  hoisted (variable must be Declared before use)
+``` JavaScript
+app.get('/items' ,(req,res)=>{
+  res.status(200)
+  let ITEMS= Object.values(items)
+  res.json(ITEMS)
+```
+
+JavaScript before ECMAScript 2015 had only global scope which means variables defined with `var` can be accessed from out side its block. In the code snip above I didn;t want to access the variable `ITEM` outside that block so I defined it with the keyword `let`
+### References
+- https://www.w3schools.com/JS/js_let.asp
+- https://data-flair.training/blogs/features-of-javascript/
 
 
 ### (name of Feature 2)
@@ -76,7 +87,10 @@ Client Framework Features
 
 ### (Event Handling)
 
-Vue event handling is a necessary aspect of every Vue project, using the v-on directive or @ for short, it allow us to listen to DOM events and run either an event handler method or run JavaScript code when triggered. Vue handler could be: Inline handlers: to be executed when the event is triggered. Method handlers: A path that points to a method defined on the component.
+Vue event handling is a necessary aspect of every Vue project, using the v-on directive or @ for short, it allow us to listen to DOM events and run either an event handler method or run JavaScript code when triggered. Vue handler could be: 
+* Inline handlers: to be executed when the event is triggered. 
+* Method handlers: A path that points to a method defined on the component.
+
 Inline handler:
 ``` JavaScript
 <form @:submit.prevent="addItem">
