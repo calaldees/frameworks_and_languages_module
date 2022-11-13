@@ -48,25 +48,15 @@ let items = {
 app.get('/', (req, res) => {
   return res.status(200).send('<html><body>Your HTML text</body></html>')
 })
-/* 
+
 app.get('/items' ,(req,res)=>{
   res.status(200)
   let ITEMS= Object.values(items) //https://medium.com/@anshurajlive/read-dictionary-data-or-convert-dictionary-into-an-array-of-objects-in-javascript-e9c52286d746
   res.json(ITEMS)
-  //filter items by user_id
-  let userItem=[]
-  for (i in items)
-  {
-    if (items[i].user_id === req.query.user_id)
-    {
-      userItem.push(items[i])
-    }
-    else{
-
-    }
-  }
 })
-*/
+
+// filter user name
+/*
 app.get('/items' ,(req,res)=>{
     let userItem= items.filter(obj => obj.user_id === (req.query.user_id))
     if (parseInt(Object.keys(userItem)).length>0)
@@ -74,12 +64,13 @@ app.get('/items' ,(req,res)=>{
       res.status(200).json(Object.values(userItem))
     }
   else{
-    res.status(404).json("user not exist")
-}
-let ITEMS= Object.values(items) //https://medium.com/@anshurajlive/read-dictionary-data-or-convert-dictionary-into-an-array-of-objects-in-javascript-e9c52286d746
-res.status(200).json(ITEMS)
-})
+   // res.status(404).json("user not exist")
+    //let ITEMS= Object.values(items) //https://medium.com/@anshurajlive/read-dictionary-data-or-convert-dictionary-into-an-array-of-objects-in-javascript-e9c52286d746
+    res.status(200).json(Object.values(items))
+  }
 
+})
+*/
 
 app.get('/item/:id',(req,res)=>{ 
   if (Object.keys(items).includes(req.params.id))
@@ -100,13 +91,13 @@ app.post('/item', (req,res)=>{
     return res.status(405).json({message: 'there is missing fields'})
   }
   else{
-  ID= parseInt( Math.max( ...Object.keys(items)) +1);
+  ID=  Math.max( ...Object.keys(items)) +1;
   req.body.id=ID;
   req.body.date_from= new Date().toISOString().slice(0, 10)
   items[ID]=req.body;
   //res.status(201).json(req.body)
-  res.status(201).json(items[req.body.id])
-  console.log(items[req.body.id])
+  res.status(201).json(items[ID])
+  console.log(items[ID])
   }
 })
 
