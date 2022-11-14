@@ -15,8 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))  // to support JSON-encoded b
 // and  https://rapidapi.com/guides/handle-cors-express
 
 app.use(cors({
-  origin: 'http://localhost:8000',
-  methods: ['POST','GET','OPTIONS','DELETE'],
+ 
 }));
 
 
@@ -47,6 +46,8 @@ let items = {
 
 app.get('/', (req, res) => {
   return res.status(200).send('<html><body>Your HTML text</body></html>')
+  
+
 })
 
 // filter user name
