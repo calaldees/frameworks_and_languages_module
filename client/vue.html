@@ -13,7 +13,6 @@
 </head>
 <body>
     <h1>FreeCycle</h1>
-
     <div id="app">
       {{ message }}
       <form @:submit.prevent="addItem">
@@ -47,8 +46,7 @@
             <span>{{item.description}}</span>
             <span>{{item.time}}</span>
         </li>
-    </ul>
-
+      </ul>
     </div>
 
 <script type="module">
@@ -56,75 +54,18 @@
 const { createApp } = Vue
 let urlAPI =  '' //'https://8000-reem313-frameworksandla-lt146dhjlm1.ws-eu71.gitpod.io'
 
-let testItem = {0:{
-    user_id: "bob",
-    lat: 1,
-    lon: 1,
-    image: "http://placekitten.com/100/100",
-    keywords: "a, b, c",
-    description: "a test item that is great",
-}}
-
 createApp({
   data() {
     return {
-      item:{
-        id: Math.random(),
-        user_id:'',
-        lat:'',
-        lon:'',
-        image:'',
-        keywords:'',
-        description:'',
-        time: Date.now(),
-      },
-      items: {},
-
-      message: 'New Item',
+      message: 'Hello Vue',
     }
   },
-  created(){
-    this.clearItem()
-    this.getItems()
-  },
-  methods: {
-    clearItem(){
-      this.item ={...this.item, ...{
-        item:{
-        id: Math.random(),
-        user_id:'',
-        lat:'',
-        lon:'',
-        image:'',
-        keywords:'',
-        description:'',
-        date: Date.now(),
-      }}
-    },
-    addItem();{
-      fetch(`${urlAPI}/item`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(this.item),
-      })
-        .then(response => response.json())
-        .then(json => console.log('addItem()', json))
-        .then(this.clearItem)
-        .then(this.getItems)
-      .catch(err => console.error(err))
-    },
-
-    getItems() {
-    fetch(`${urlAPI}/items`, {
-        method: 'GET',
-    })
-        .then(response => response.json())
-        .then(data=> this.attendees=data)
-    .catch(err => console.error(err))
-  },
-}
-})
-.mount('#app')
+  methods:{
+    addItem(){
+      console.log("addItem")
+    }
+  }
+}).mount('#app')
 
 </script>
 </body>
