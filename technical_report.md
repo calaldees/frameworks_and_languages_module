@@ -180,9 +180,14 @@ Critique of Server/Client prototype
 Noticing here ```while True:```  it initiates an infinite loop that will theoretically run forever, it will keep the server active and listening for a response from the client  
 (Explain why this pattern is problematic - 40ish words 1 mark)
 
-### (name of Issue 2)
+### (render items)
 
-(A code snippet example demonstrating the feature - 1 mark)
+``` python
+function renderItems(data) {
+		const $item_list = document.querySelector(`[data-page="items"] ul`);
+		const new_item_element = () => document.querySelector(`[data-page="items"] li`).cloneNode(true);
+```
+looking at the code in example_client we notice that the rendering is happening all over the place
 (Explain why this pattern is problematic - 40ish words 1 mark)
 
 
