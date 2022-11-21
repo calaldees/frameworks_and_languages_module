@@ -157,9 +157,27 @@ Client Language Features
 Critique of Server/Client prototype
 ---------------------
 
-### (name of Issue 1)
+### (infinity loop)
 
-(A code snippet example demonstrating the feature - 1 mark)
+``` python
+        while True:
+            s.listen()
+            try:
+                conn, addr = s.accept()
+            except KeyboardInterrupt as ex:
+                break
+            with conn:
+                #log.debug(f'Connected by ')
+                #while True:
+                    data = conn.recv(65535)  # If the request does not come though in a single recv/packet then this server will fail and will not composit multiple TCP packets. Sometimes the head and the body are sent in sequential packets. This happens when the system switches task under load.
+                    #if not data: break
+                    try:
+                        request = parse_request(data)
+                    except InvalidHTTPRequest as ex:
+                        log.exception("InvalidHTTPRequest")
+                        continue
+```
+Noticing here ```while True:```  it initiates an infinite loop that will theoretically run forever, it will keep the server active and listening for a response from the client  
 (Explain why this pattern is problematic - 40ish words 1 mark)
 
 ### (name of Issue 2)
