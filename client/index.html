@@ -1,0 +1,127 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,....==" />
+    <title>FreeCycle</title>
+    <style>
+
+    /* styles here */
+
+    </style>
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>FreeCycle</h1>
+    <div id="app">
+      {{ message }}
+      <form @:submit.prevent="create_item">
+        <label>UserName : </label>
+        <input v-model="item.user_id" name="user_id" type ="text" placeholder="name"> <br>
+
+        <label>lat : </label>
+        <input v-model="item.lat" name="lat" type="text"><br>
+
+        <label>lon : </label>
+        <input v-model="item.lon" name="lon" type="text"><br>
+
+        <label>image : </label>
+        <input v-model="item.image" name="image" type="text"><br>
+
+        <label>Keywords : </label>
+        <input v-model="item.keywords" name="keywords" type="text"><br>
+
+        <label>Description : </label>
+        <textarea v-model="item.description" name="description"></textarea><br>
+        <button data-action="create_item" type="submit">Submit</button>
+      </form>
+
+      <ul>
+        <li v-for="item in items">
+          <span data-field="id">{{item.id}}</span>
+          <span>{{item.user_id}}</span>
+          <span>{{item.keywords}}</span>
+          <span>{{item.image}}</span>
+          <span>{{item.lat}}</span>
+          <span>{{item.lon}}</span>
+          <span>{{item.date_from}}</span>
+          <span>{{item.description}}</span>
+          <button data-action="delete" @click="delete_item(item.id)">Delete</button>
+        </li>
+      </ul>
+    
+    </div>
+    <script type="module">
+    const { createApp } = Vue
+    let API = '' //'https://8000-reem313-frameworksandla-lt146dhjlm1.ws-eu74.gitpod.io'
+    const urlParams = new URLSearchParams(window.location.search);
+	  const urlAPI = (urlParams.get('api') || DEFAULT_API).replace(/\/$/, '');  // Get api url (and remove trailing slash if present)
+    const DEFAULT_API = '/api/v1';  // default to current http(s)://currentHost:currentPort/api/v1'
+
+    createApp({
+      data() {
+        return {
+          item: {
+            id:'',
+            user_id:'',
+            keywords:'',
+            lat:'',
+            lon:'',
+            image:'',
+            date_from:'',
+            description:'',
+          },
+          items:[],
+          message: 'Hello Vue',
+        }
+      },
+      created(){
+        this.clear_item()
+        this.get_items()
+      },
+    methods:{
+      clear_item(){
+        this.item= { ...this.item, ...{
+            user_id:'',
+            keywords:'',
+            lat:'',
+            lon:'',
+            image:'',
+            description:'',
+        }}
+      },
+        create_item() {
+         fetch(`${urlAPI}/item`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(this.item),
+          })
+          .then(response => response.json())
+          .then(json => console.log('create_item()', json))
+          .then(this.clear_item)
+          .then(this.get_items)
+        .catch(err => console.error(err));
+        },
+        get_items() {
+         fetch(`${urlAPI}/items`, {
+            method: 'GET',
+          })
+          .then(response => response.json())
+          .then(data => this.items=data)
+          //.then(data => console.log('data', data))
+        .catch(err => console.error(err));
+        },
+        delete_item(item_id){
+          fetch(`${urlAPI}/item/${item_id}`, {
+            method: 'DELETE',
+          })
+          .then(response => response.json())
+          .then(json => console.log('delete_item()', json))
+          .then(this.get_items())
+          //.then(()=>this.updateAttendees())
+        .catch(err => console.error(err));
+        }
+      },
+    }).mount('#app')
+    </script>
+  </body>
+</html>
