@@ -76,7 +76,7 @@ app.get('/item/:id',(req,res)=>{
 
 //https://medium.com/@anshurajlive/read-dictionary-data-or-convert-dictionary-into-an-array-of-objects-in-javascript-e9c52286d746
 app.post('/item', (req,res)=>{
-  if (!req.user_id && !req.body.description && !req.body.keywords && !req.body.lat && !req.body.lon)
+  if (!req.body.user_id || !req.body.description || !req.body.keywords || !req.body.lat || !req.body.lon)
   {
     return res.status(405).json({message: 'there is missing fields'})
   }
@@ -86,6 +86,7 @@ app.post('/item', (req,res)=>{
   req.body.date_from= new Date().toISOString().slice(0, 10)
   items[ID]=req.body;
   res.status(201).json(items[ID])
+  console.log(items[ID])
   }
 })
 
@@ -94,6 +95,8 @@ app.delete('/item/:id',(req,res)=>{
   {
     delete[items[req.params.id]]    //https://www.tutorialspoint.com/Remove-elements-from-a-Dictionary-using-Javascript#:~:text=To%20remove%20an%20element%20from,it%20using%20the%20delete%20operator.
     res.status(204).json("OK")
+    console.log("item deleted", items)
+
   }
   else{ 
     res.status(404).json("Item not found")
