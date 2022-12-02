@@ -13,8 +13,7 @@
 <body>
     <h1>FreeCycle</h1>
     <div id="app">
-      {{ message }}
-      <form @:submit.prevent="create_item">
+      <form @:submit.prevent="create_item" data_field="user_id">
         <label>UserName : </label>
         <input v-model="item.user_id" name="user_id" type ="text" placeholder="name"> <br>
 
@@ -45,7 +44,7 @@
           <span>{{item.lon}}</span>
           <span>{{item.date_from}}</span>
           <span>{{item.description}}</span>
-          <button data-action="delete" @click="delete_item(item.id)">Delete</button>
+          <button @click="delete_item(item.id)" data-action="delete">Delete</button>
         </li>
       </ul>
     
@@ -71,7 +70,6 @@
             description:'',
           },
           items:[],
-          message: 'Hello Vue',
         }
       },
       created(){
@@ -110,15 +108,13 @@
           //.then(data => console.log('data', data))
         .catch(err => console.error(err));
         },
-        delete_item(item_id){
-          fetch(`${urlAPI}/item/${item_id}`, {
-            method: 'DELETE',
-          })
-          .then(response => response.json())
-          .then(json => console.log('delete_item()', json))
-          .then(this.get_items())
-          //.then(()=>this.updateAttendees())
-        .catch(err => console.error(err));
+        delete_item(id){
+            fetch(`${urlAPI}/item/${id}`,{
+                method: 'DELETE',
+            })
+            .then(json => console.log('delete_item()', json))
+            .then(this.get_items)
+              .catch(err => console.error(err));
         }
       },
     }).mount('#app')

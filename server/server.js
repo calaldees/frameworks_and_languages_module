@@ -15,8 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }))  // to support JSON-encoded b
 // and  https://rapidapi.com/guides/handle-cors-express
 
 app.use(cors({
- 
-}));
+  methods: ['GET','POST','DELETE','OPTIONS']
+}))
 
 
 /*
@@ -26,23 +26,8 @@ curl -v -X GET http://localhost:8000/item/0
 curl -v -X DELETE  http://localhost:8000/item/1
 curl -v -X OPTIONS http://localhost:8000/
 */
-let items = {
-  0: {
-    "id":0,
-      "user_id": "user1234",
-      "keywords": [
-        "hammer",
-        "nails",
-        "tools"
-      ],
-      "description": "A hammer and nails set",
-      "image": "https://placekitten.com/200/300",
-      "lat": 51.2798438,
-      "lon": 1.0830275,
-      "date_from": "2022-10-31T16:54:59.391Z",
-      "date_to": "2022-10-31T16:54:59.391Z"
-    }
-  }
+items = {}
+  
 
 app.get('/', (req, res) => {
   return res.status(200).send('<html><body>Your HTML text</body></html>')
@@ -81,7 +66,10 @@ app.post('/item', (req,res)=>{
     return res.status(405).json({message: 'there is missing fields'})
   }
   else{
-  ID=  Math.max( ...Object.keys(items)) +1;
+    ID=  Math.max( ...Object.keys(items)) +1;
+    if(ID == "-Infinity"){
+      ID= 0
+    }
   req.body.id=ID;
   req.body.date_from= new Date().toISOString().slice(0, 10)
   items[ID]=req.body;
@@ -93,9 +81,10 @@ app.post('/item', (req,res)=>{
 app.delete('/item/:id',(req,res)=>{
   if ( Object.keys(items).includes(req.params.id))
   {
-    delete[items[req.params.id]]    //https://www.tutorialspoint.com/Remove-elements-from-a-Dictionary-using-Javascript#:~:text=To%20remove%20an%20element%20from,it%20using%20the%20delete%20operator.
+    delete(items[req.params.id])    //https://www.tutorialspoint.com/Remove-elements-from-a-Dictionary-using-Javascript#:~:text=To%20remove%20an%20element%20from,it%20using%20the%20delete%20operator.
     res.status(204).json("OK")
     console.log("item deleted", items)
+    console.log(items)
 
   }
   else{ 
