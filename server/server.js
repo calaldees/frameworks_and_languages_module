@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))  // to support JSON-encoded b
 // and  https://rapidapi.com/guides/handle-cors-express
 
 app.use(cors({
-  methods: ['GET','POST','DELETE','OPTIONS']
+  
 }))
 
 

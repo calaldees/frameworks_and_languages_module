@@ -13,7 +13,7 @@
 <body>
     <h1>FreeCycle</h1>
     <div id="app">
-      <form @:submit.prevent="create_item" data_field="user_id">
+      <form @:submit.prevent="create_item">
         <label>UserName : </label>
         <input v-model="item.user_id" name="user_id" type ="text" placeholder="name"> <br>
 
@@ -39,7 +39,7 @@
           <span data-field="id">{{item.id}}</span>
           <span>{{item.user_id}}</span>
           <span>{{item.keywords}}</span>
-          <span>{{item.image}}</span>
+          <img :src="item.image">
           <span>{{item.lat}}</span>
           <span>{{item.lon}}</span>
           <span>{{item.date_from}}</span>
@@ -108,8 +108,8 @@
           //.then(data => console.log('data', data))
         .catch(err => console.error(err));
         },
-        delete_item(id){
-            fetch(`${urlAPI}/item/${id}`,{
+        delete_item(item_id){
+            fetch(`${urlAPI}/item/${item_id}`,{
                 method: 'DELETE',
             })
             .then(json => console.log('delete_item()', json))
