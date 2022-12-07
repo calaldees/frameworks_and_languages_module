@@ -3,74 +3,91 @@
 <head>
     <meta charset="utf-8" />
     <link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,....==" />
-    <meta name="viewport" content="width=device-width">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
     <title>FreeCycle</title>
     <style>
-
-    /* styles here */
+      ul{
+        list-style: none;
+      }
+      .navbar-brand{
+        font-size: 3rem;
+      }
+      .card{
+        width: 18rem;
+        margin: 5px;
+      }
 
     </style>
    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-  <nav class="navbar navbar-dark bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Free Cycle</a>
-    </div>
-  </nav>
-    <div id="app">
+  <div class="container">
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+      <a class="navbar-brand"><strong>FREECYCLE</strong></a>
+    </nav>
+  </div>
+    <div id="app" class="container">
+      <h3>Create an item : </h3>
       <form @:submit.prevent="create_item">
-        <label>UserName : </label>
-        <input v-model="item.user_id" name="user_id" type ="text" placeholder="name"> <br>
+        <div class="form-group mx-sm-3 mb-2">
+          <label  class="col-sm-1 col-form-label">UserName : </label>
+          <input v-model="item.user_id" name="user_id" type ="text" placeholder="name">
+        </div>
 
-        <label>lat : </label>
-        <input v-model="item.lat" name="lat" type="text"><br>
+        <div class="form-group mx-sm-3 mb-2">
+          <label  class="col-sm-1 col-form-label">Latitude: </label>
+          <input v-model="item.lat" name="lat" type="text" placeholder="Latitude">
+      </div>
 
-        <label>lon : </label>
-        <input v-model="item.lon" name="lon" type="text"><br>
+      <div class="form-group mx-sm-3 mb-2">
+        <label class="col-sm-1 col-form-label">Longitude: </label>
+        <input v-model="item.lon" name="lon" type="text" placeholder="Longitude">
+      </div>
 
-        <label>image : </label>
-        <input v-model="item.image" name="image" type="text"><br>
+      <div class="form-group mx-sm-3 mb-2">
+        <label class="col-sm-1 col-form-label">Image : </label>
+        <input v-model="item.image" name="image" type="text" placeholder="Place a url for an image">
+      </div>
 
-        <label>Keywords : </label>
-        <input v-model="item.keywords" name="keywords" type="text"><br>
+      <div class="form-group mx-sm-3 mb-2">
+        <label class="col-sm-1 col-form-label">Keywords : </label>
+        <input v-model="item.keywords" name="keywords" type="text" placeholder="Keywords">
+      </div>
 
-        <label>Description : </label>
-        <textarea v-model="item.description" name="description"></textarea><br>
-        <button data-action="create_item" type="submit">Submit</button>
+      <div class="form-group mx-sm-3 mb-2">
+        <label class="col-sm-1 col-form-label">Description : </label>
+        <textarea v-model="item.description" name="description" placeholder="Description"></textarea>
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <button data-action="create_item" type="submit" class="btn btn-primary mb-3">Submit</button>
+      </div>
       </form>
-
-      <div class="container my-3" style="display:inline-block ;">
-        <ul style="list-style: none;">
-          <li v-for="item in items">
+      <h3>List of Items :</h3> 
+      <ul>
+        <li v-for="item in items">
             <div class="row">
-              <div class="col-sm">
-                  <div class="card border-primary mb-3" style="max-width: 18rem;">
-                    <img :src="item.image" class="card-img-top">
-                    <div class="card-body">
-                      <h5 class="card-title"> User Id: {{item.user_id}}</h5>
-                      <p data-field="id"> List Id: {{item.id}}</p>
-                      <p class="card-text"> Keyword: {{item.keywords}}</p>
-                      <p class="card-text">Lat: {{item.lat}}</p>
-                      <p class="card-text">Lon: {{item.lon}}</p>
-                      <p class="card-text">Date: {{item.date_from}}</p>
-                      <p class="card-text">Description: {{item.description}}</p>
-                      <button @click="delete_item(item.id)" data-action="delete" class="btn btn-primary">Delete</button>
+              <div class="col-sm-4">
+                <div class="card">
+                  <img :src="item.image" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title"> User Id: {{item.user_id}}</h5>
+                    <p data-field="id"> List Id: {{item.id}}</p>
+                    <p class="card-text">Keywords: {{item.keywords}}</p>
+                    <p class="card-text">Latitude: {{item.lat}}</p>
+                    <p class="card-text">Longitude: {{item.lon}}</p>
+                    <p class="card-text">Date: {{item.date_from}}</p>
+                    <p class="card-text">Description: {{item.description}}</p>
+                    <button @click="delete_item(item.id)" data-action="delete" class="btn btn-primary">Delete</button>
                   </div>
                 </div>
               </div>
             </div>
-          </li>
-        </ul>
-      </div>
+        </li>
+      </ul>
     </div>
     
-    
-    </div>
     <script type="module">
     const { createApp } = Vue
     let API = '' //'https://8000-reem313-frameworksandla-lt146dhjlm1.ws-eu74.gitpod.io'
