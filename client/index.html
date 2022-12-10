@@ -17,6 +17,7 @@
       .card{
         width: 18rem;
         margin: 5px;
+        display:inline-block;
       }
 
     </style>
@@ -67,29 +68,30 @@
       <h3>List of Items :</h3> 
       <ul>
         <li v-for="item in items">
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="card">
-                  <img :src="item.image" class="card-img-top">
-                  <div class="card-body">
-                    <h5 class="card-title"> User Id: {{item.user_id}}</h5>
-                    <p data-field="id"> List Id: {{item.id}}</p>
-                    <p class="card-text">Keywords: {{item.keywords}}</p>
-                    <p class="card-text">Latitude: {{item.lat}}</p>
-                    <p class="card-text">Longitude: {{item.lon}}</p>
-                    <p class="card-text">Date: {{item.date_from}}</p>
-                    <p class="card-text">Description: {{item.description}}</p>
-                    <button @click="delete_item(item.id)" data-action="delete" class="btn btn-primary">Delete</button>
-                  </div>
+          <div class="row">
+            <div  class="col-lg-4">
+              <div class="card border-primary mb-3">
+                <img :src="item.image" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title"> User Id: {{item.user_id}}</h5>
+                  <p data-field="id"> List Id: {{item.id}}</p>
+                  <p class="card-text">Keywords: {{item.keywords}}</p>
+                  <p class="card-text">Latitude: {{item.lat}}</p>
+                  <p class="card-text">Longitude: {{item.lon}}</p>
+                  <p class="card-text">Date: {{item.date_from}}</p>
+                  <p class="card-text">Description: {{item.description}}</p>
+                  <button @click="delete_item(item.id)" data-action="delete" class="btn btn-primary">Delete</button>
                 </div>
               </div>
             </div>
+          </div>
         </li>
       </ul>
     </div>
     
     <script type="module">
     const { createApp } = Vue
+    //https://github.com/calaldees/frameworks_and_languages_module/blob/main/docs/assignment_hints.md
     let API = '' //'https://8000-reem313-frameworksandla-lt146dhjlm1.ws-eu74.gitpod.io'
     const urlParams = new URLSearchParams(window.location.search);
 	  const urlAPI = (urlParams.get('api') || DEFAULT_API).replace(/\/$/, '');  // Get api url (and remove trailing slash if present)
@@ -115,6 +117,7 @@
         this.clear_item()
         this.get_items()
       },
+      // clear the text boxes after the user hit the submit button
     methods:{
       clear_item(){
         this.item= { ...this.item, ...{
@@ -126,6 +129,7 @@
             description:'',
         }}
       },
+      //call the post function on the server side to create an item
         create_item() {
          fetch(`${urlAPI}/item`, {
             method: 'POST',
@@ -138,6 +142,7 @@
           .then(this.get_items)
         .catch(err => console.error(err));
         },
+        //call the items that it is stored in the item list in the server
         get_items() {
          fetch(`${urlAPI}/items`, {
             method: 'GET',
@@ -147,6 +152,7 @@
           //.then(data => console.log('data', data))
         .catch(err => console.error(err));
         },
+        //delete an item with id
         delete_item(item_id){
             fetch(`${urlAPI}/item/${item_id}`,{
                 method: 'DELETE',
