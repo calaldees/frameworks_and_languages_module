@@ -46,4 +46,5 @@ it will use cypress test which produce a video for the test.
 * https://github.com/calaldees
 * https://github.com/KieranBest
 * https://github.com/Joshua-Yuill
+* Throughout the implementation of this assignment we (Kieran, Joshua, Allan) had discussions about different topics such as linking the server side with the client, delete item, how to make the app responsive etc
 

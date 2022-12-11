@@ -16,7 +16,7 @@ make build
 ``` powershell
 make run
 ```
-As this is only a server side and doesnot have a user interface, we communicate with the server using the following curl commands to post, get, delete, view options.
+As this is only a server side and does not have a user interface, we communicate with the server using the following curl commands to post, get, delete, view options.
 
 ``` powershell
 curl -v -X POST  http://localhost:8000/item -H "Content-Type: application/json" -d '{"user_id": "user1234", "keywords": [ "hammer", "nails", "tools"],   "description": "A hammer and nails set",  "image": "https://placekitten.com/200/300",   "lat": 51.2798438,"lon": 1.0830275 }'
@@ -29,6 +29,10 @@ curl -v -X OPTIONS http://localhost:8000/
 For testing the server use the following command in the main directory
 ``` powershell
 make test_server
+```
+or 
+``` powershell
+pytest
 ```
 
 #### Refernces
@@ -43,3 +47,4 @@ make test_server
 * https://github.com/calaldees
 * https://github.com/KieranBest
 * https://github.com/Joshua-Yuill
+* Throughout the implementation of this assignment we (Kieran, Joshua, Allan) had discussions about different topics such as the use of filter in javaScript, object.values, object.keys, nested dictionary, req.params, how to use the test to help debug our code
