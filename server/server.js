@@ -33,8 +33,6 @@ items = {}
 //Used for a human to know the service is working
 app.get('/', (req, res) => {
   return res.status(200).send('<html><body>Your HTML text</body></html>')
-  
-
 })
 
 // filter user name: return all the items created by the same user otherwise return all items

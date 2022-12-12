@@ -7,32 +7,27 @@ Technical Report
 Server Framework Features
 -------------------------
 
-### (Express route example)
+### 1- Express routing
 
-Web applications use a routing technique which is a mechanism that the HTTP methods and URLs are routed to a specific function within the code to handle it. For example we can bind the `route /`hello to the `helloWorld()` function in the flask application as bellow and the output of that function will be shown in your browser which is "Hello World!". Similarly you can add parameters to the url path (route):
+Routing is a mechanism that determine how HTTPs requests. Express ```app``` will allow you to map/register the request method and path to a specific function to produce a response. For example, ```app.get()``` to handle GET request and ```app.post()``` to handle post request. In the code snipped below in an example of a ```get``` callback function to handle a GET request and respond back with HTML page.
 
-``` python
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route("/hello")
-def hello_world():
-    return "<p>Hello, World!</p>"
+``` JavaScript
+app.get('/', (req, res) => {
+  return res.status(200).send('<html><body>Your HTML text</body></html>')
+})
 ```
-
-This is especially useful to give a meaningful url to the web application and to the pages within the web app and what the app should do/display when a user visit a certain page.
+This is particularly useful to to manage the application urls structure and how the app should behave when a user visit a certain page.
 ### References:
-- Flask Tutorial: Routes [Online]. Python Tutorial . Available at: pythonbasics.org/flask-tutorial-routes/ (Accessed: 9 October 2022).
-- Web Development with Node and Express by Ethan Brown [Online]. Web Development with Node and Express [Book]. Available at: www.oreilly.com/library/view/web-development-with/9781491902288/ch14.html (Accessed: 9 October 2022).
+- https://expressjs.com/en/guide/routing.html
+- https://expressjs.com/en/starter/basic-routing.html
+- https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes
 
 
-### (Middleware)
+### 2- Middleware
 
-In Express framework Middleware are functions that are called to process a specific task after the server receives a request from the client and before the response is sent back. for example we use the built-in middleware in Express to json the data that is received from the requests as shown in the snippet code bellow
+Middleware are functions that are called to process/perform a specific task after the server receives a request from the client and before the response is sent back. For example we use the built-in middleware in Express to json the data that is received from the requests as shown in the snippet code bellow
 ``` JavaScript
 app.post('/item', (req,res)=>{
-  
     items.push(req.body)
     return res.status(201).json(items)
 })
@@ -44,13 +39,26 @@ The route above with url ```/item```  in the application accepts an item data in
 - T. Hombergs, (2022). Complete Guide to Express Middleware [Online]. Available at: reflectoring.io/express-middleware/ (Accessed: 15 October 2022).
  - Using Express middleware [Online]. Available at: expressjs.com/en/guide/using-middleware.html (Accessed: 15 October 2022).
 
-### (name of Feature 3)
+### 2- Templating
 
-(Technical description of the feature - 40ish words - 1 mark)
-(A code block snippet example demonstrating the feature - 1 mark)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words - 1 mark)
-(Provide reference urls to your sources of information about the feature - required)
+Express uses template engine such as EJS, Pug, and Mustache that allow you to generate HTML dynamically and remove cluttering from the server side with the HTML. in the code snipped below we set the view engine to ```pug``` then a get call and render the view:
+``` javascript
+app.set('view engine', 'pug');
+app.get('/home', (req, res) => {
+  res.render('home');
+});
+```
+in ```views``` directory we can add the template where it will be created with ```h2``` tag and ```p``` tag with it corresponding text as bellow, 
+```
+h2 Hello World
+p This is my first view
+```
+The benefits of using templating engines is reduces page load time and client side processing as well as design complexity.
 
+### References:
+- https://rachelanderse.medium.com/express-js-features-fundamental-concepts-1cc446b21ccb
+- https://www.geeksforgeeks.org/how-to-do-templating-using-expressjs-in-node-js/
+- https://www.digitalocean.com/community/tutorials/nodejs-express-template-engines
 
 Server Language Features
 -----------------------
