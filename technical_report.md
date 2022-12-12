@@ -9,7 +9,7 @@ Server Framework Features
 
 ### 1- Express routing
 
-Routing is a mechanism that determine how HTTPs requests. Express ```app``` will allow you to map/register the request method and path to a specific function to produce a response. For example, ```app.get()``` to handle GET request and ```app.post()``` to handle post request. In the code snipped below in an example of a ```get``` callback function to handle a GET request and respond back with HTML page.
+Routing is a mechanism that determine how HTTPs requests. Express ```app``` will allow you to map/register the request method and path to a specific function to produce a response. For example, ```app.get()``` to handle GET request and ```app.post()``` to handle post request. In the code snippet below in an example of a ```get``` callback function to handle a GET request and respond back with HTML page.
 
 ``` JavaScript
 app.get('/', (req, res) => {
@@ -39,9 +39,9 @@ The route above with url ```/item```  in the application accepts an item data in
 - T. Hombergs, (2022). Complete Guide to Express Middleware [Online]. Available at: reflectoring.io/express-middleware/ (Accessed: 15 October 2022).
  - Using Express middleware [Online]. Available at: expressjs.com/en/guide/using-middleware.html (Accessed: 15 October 2022).
 
-### 2- Templating
+### 3- Templating
 
-Express uses template engine such as EJS, Pug, and Mustache that allow you to generate HTML dynamically and remove cluttering from the server side with the HTML. in the code snipped below we set the view engine to ```pug``` then a get call and render the view:
+Express uses template engine such as EJS, Pug, and Mustache that allow you to generate HTML dynamically and remove cluttering from the server side with the HTML. in the code snippet below we set the view engine to ```pug``` then a get call and render the view:
 ``` javascript
 app.set('view engine', 'pug');
 app.get('/home', (req, res) => {
@@ -63,7 +63,7 @@ The benefits of using templating engines is reduces page load time and client si
 Server Language Features
 -----------------------
 
-### (The `Let` Keyword)
+### 1- The `Let` Keyword
 
 The keyword `let` in JavaScript was introduced in ECMAScript 2015 to provide the variables with the following features:
 * Cannot be accidentally redeclared
@@ -74,26 +74,28 @@ app.get('/items' ,(req,res)=>{
   res.status(200)
   let ITEMS= Object.values(items)
   res.json(ITEMS)
+})
 ```
 
-JavaScript before ECMAScript 2015 had only global scope which means variables defined with `var` can be accessed from out side its block. In the code snip above I didn;t want to access the variable `ITEM` outside that block so I defined it with the keyword `let`
+JavaScript before ECMAScript 2015 had only global scope which means variables defined with `var` can be accessed from out side its block. In the code snippet above I didn't want to access the variable `ITEM` outside that block so I defined it with the keyword `let`
 ### References
 - https://www.w3schools.com/JS/js_let.asp
 - https://data-flair.training/blogs/features-of-javascript/
 
 
-### (name of Feature 2)
+### 2- Mutability
+Objects and arrays can be changed when using build-in functions such as `sort()` without creating an entirely new value while using `filter()` will create a copy of the array
+```javascript
+    res.status(200).json(Object.values(items).filter(i  => i.user_id == req.query.user_id))
+```
+this can be problematic as you cannot predict the outcome of the program because the execution of one part of the code will modify the object and may effect it use later.
 
-(Technical description of the feature - 40ish words - 1 mark)
-(A code block snippet example demonstrating the feature - 1 mark)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words - 1 mark)
-(Provide reference urls to your sources of information about the feature - required)
-
-
+### References
+- https://developer.mozilla.org/en-US/docs/Glossary/Mutable#:~:text=Mutable%20A%20mutable%20value%20is%20one%20that%20can,the%20variable%20that%20holds%20it%20may%20be%20reassigned.
 Client Framework Features
--------------------------
+- https://medium.com/swlh/javascript-array-mutability-immutability-93d366c90751
 
-### (Event Handling)
+### 1- Event Handling
 
 Vue event handling is a necessary aspect of every Vue project, using the v-on directive or @ for short, it allow us to listen to DOM events and run either an event handler method or run JavaScript code when triggered. Vue handler could be: 
 * Inline handlers: to be executed when the event is triggered. 
@@ -128,38 +130,64 @@ This allow us to handle user input, or add dynamic functionality to the app
 - https://v2.vuejs.org/v2/guide/events.html
 
 
-### (name of Feature 2)
-
-(Technical description of the feature - 40ish words - 1 mark)
-(A code block snippet example demonstrating the feature - 1 mark)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words - 1 mark)
-(Provide reference urls to your sources of information about the feature - required)
+### 2- Binding data with existing html
 
 
-### (name of Feature 3)
 
-(Technical description of the feature - 40ish words - 1 mark)
-(A code block snippet example demonstrating the feature - 1 mark)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words - 1 mark)
-(Provide reference urls to your sources of information about the feature - required)
-
+### 3- Declarative Rendering
+It allow us to render data to the DOM and let the framework decide hoe to display the the data correctly to the user.
+```javaScript
+<p class="card-text">Keywords: {{item.keywords}}</p>
+<p class="card-text">Latitude: {{item.lat}}</p>
+<p class="card-text">Longitude: {{item.lon}}</p>
+```
 
 Client Language Features
 ------------------------
 
-### (name of Feature 1)
+### 1- Spread Operator
+It is a feature that enable us to access content of an iterable data structure such array or dictionary without having to use `for` or `foreach()` to loop through it's content
+```javascript
+     clear_item(){
+        this.item= { ...this.item, ...{
+            user_id:'',
+            keywords:'',
+            lat:'',
+            lon:'',
+            image:'',
+            description:'',
+        }}
+     }
+```
+```javascript
+const arrayMerged = [...arrayOne, ...arrayTwo]
+```
+spread operator allow us to do deep copy, combine two iterable objects, Inserting data without any complex process.
+### References:
+- https://blog.alexdevero.com/javascript-spread-operator/
+- https://www.geeksforgeeks.org/javascript-spread-operator/
 
-(Technical description of the feature - 40ish words - 1 mark)
-(A code block snippet example demonstrating the feature - 1 mark)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words - 1 mark)
-(Provide reference urls to your sources of information about the feature - required)
+### 2- Async Processing
+JavaScript is a single-threaded language so using async processing give the ability to calls the next function to be executed without waiting for the current or previous one to finish. ```then()``` function in JavaScript used to handle asynchronous tasks such as API call. It is defined in the Promise API.
+```javaScript
+create_item() {
+  fetch(`${urlAPI}/item`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(this.item),
+    })
+    .then(response => response.json())
+    .then(this.clear_item)
+    .then(this.get_items)
+    .catch(err => console.error(err));
+    }
+```
+This is particularly useful technique as it enables the program to start long-running task and still be responsive to other events.
 
-### (name of Feature 2)
-
-(Technical description of the feature - 40ish words - 1 mark)
-(A code block snippet example demonstrating the feature - 1 mark)
-(Explain the problem-this-is-solving/why/benefits/problems - 40ish words - 1 mark)
-(Provide reference urls to your sources of information about the feature - required)
+### References:
+- https://javascript.plainenglish.io/asynchronous-javascript-introducing-async-and-await-5b15e971b43a#:~:text=Asynchronous%20processing%20is%20one%20of%20the%20most%20important,from%20the%20disk%2C%20or%20interacting%20with%20user%20input
+- https://www.geeksforgeeks.org/understanding-the-async-in-javascript/
+- https://www.geeksforgeeks.org/why-we-use-then-method-in-javascript/
 
 
 Critique of Server/Client prototype
