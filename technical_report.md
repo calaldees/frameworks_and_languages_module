@@ -256,13 +256,14 @@ looking at the code in example_client we notice that the rendering is happening 
 Future Technology Suggestions
 -----------------------------
 
-### (name of technology/feature 1)
+### 1- Serverless (AWS) 
+It is where a cloud service provider handle the management of the server infrastructure allowing developers to focus on developing their program that run and deployed on the cloud wherever/whenever they are needed. It also can scale up/down to match the demand for the application on the basis of pay per execution making it cost effective.
+The drawback with this tech is when you write an AWS lambda and your business grow the cost will increase and you cannot switch your business to another technology in the future.
 
-(Description of a feature or tool - 40ish words - 1 mark)
-(Why/benefits/problems with using this - 40ish words - 1 mark)
-(Provide reference urls to your source of information about this technology - required)
-
-
+### References 
+- https://www.redhat.com/en/topics/cloud-native-apps/what-is-serverless
+- https://azure.microsoft.com/en-gb/resources/cloud-computing-dictionary/what-is-serverless-computing/
+- https://www.cloudflare.com/en-gb/learning/serverless/what-is-serverless/
 ### (name of technology/feature 2)
 
 (Description of a feature or tool - 40ish words - 1 mark)
