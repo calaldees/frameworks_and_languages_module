@@ -1,7 +1,7 @@
 Technical Report
 ================
 
-(intro)
+This report contains technical documentation and justification for the effectiveness of the frameworks that have been chosen to develop the FreeCycle software. In addition, it contains Critique of Server/Client prototype and few possible technology suggestions.
 
 
 Server Framework Features
@@ -95,6 +95,9 @@ this can be problematic as you cannot predict the outcome of the program because
 Client Framework Features
 - https://medium.com/swlh/javascript-array-mutability-immutability-93d366c90751
 
+Client Framework Features
+-------------------------
+
 ### 1- Event Handling
 
 Vue event handling is a necessary aspect of every Vue project, using the v-on directive or @ for short, it allow us to listen to DOM events and run either an event handler method or run JavaScript code when triggered. Vue handler could be: 
@@ -135,12 +138,35 @@ This allow us to handle user input, or add dynamic functionality to the app
 
 
 ### 3- Declarative Rendering
-It allow us to render data to the DOM and let the framework decide hoe to display the the data correctly to the user.
+it allow us to render data to the DOM declaratively and let the framework decide how to display the the data correctly to the user. The "Mustache" syntax ```{{variable}}``` acts as a placeholder for the data to be rendered as shown in the code snipped below:
 ```javaScript
 <p class="card-text">Keywords: {{item.keywords}}</p>
 <p class="card-text">Latitude: {{item.lat}}</p>
 <p class="card-text">Longitude: {{item.lon}}</p>
 ```
+Inside Vue app a data property is a property holder that holds data properties. Then, by using multiple template syntax, these data properties are rendered to the DOM.
+
+```javaScript
+ createApp({
+      data() {
+        return {
+          item: {
+            id:'',
+            user_id:'',
+            keywords:'',
+            lat:'',
+            lon:'',
+            image:'',
+            date_from:'',
+            description:'',
+          },
+```
+This is particularly useful as it provides variable synchronization without the need for additional functions to re-render variables with its corresponding value to the DOM.
+
+### References:
+- https://medium.com/@onyenekwelizabeth/declarative-rendering-in-vue-8754640c42ac#:~:text=DECLARATIVE%20RENDERING%20IN%20VUE%20Vue%20js%20uses%20a,instead%20of%20actually%20using%20the%20native%20DOM%20object.
+- https://www.geeksforgeeks.org/vue-js-declarative-rendering/
+- https://www.kylontyner.com/what-is-declarative-rendering-in-vue/
 
 Client Language Features
 ------------------------
