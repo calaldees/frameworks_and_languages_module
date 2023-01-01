@@ -264,12 +264,14 @@ The drawback with this tech is when you write an AWS lambda and your business gr
 - https://www.redhat.com/en/topics/cloud-native-apps/what-is-serverless
 - https://azure.microsoft.com/en-gb/resources/cloud-computing-dictionary/what-is-serverless-computing/
 - https://www.cloudflare.com/en-gb/learning/serverless/what-is-serverless/
-### (name of technology/feature 2)
 
-(Description of a feature or tool - 40ish words - 1 mark)
-(Why/benefits/problems with using this - 40ish words - 1 mark)
-(Provide reference urls to your source of information about this technology - required)
+### MongoDB
+Using MongoDB (NoSQL Document-oriented database) allow you to manage big collection of unstructured data providing scalability, flexibility unlike SQL database, where it has fixed tables and schema format making handling updates a complex process. In addition, MongoDB accomplish the concept of sharding by dividing data among several MongoDB instances, making it possible to scale horizontally. In case of hardware failure, MongoDB operate across multiple servers, balancing the load and providing redundancy to the data to keep the system operational.
 
+### References 
+- https://www.guru99.com/what-is-mongodb.html#:~:text=MongoDB%20is%20a%20document-oriented%20NoSQL%20database%20used%20for,are%20the%20basic%20unit%20of%20data%20in%20MongoDB.
+- https://www.guru99.com/nosql-tutorial.html
+- https://www.oracle.com/database/nosql/what-is-nosql/
 
 ### (name of technology/feature 3)
 
