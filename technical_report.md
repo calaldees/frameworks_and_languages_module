@@ -273,8 +273,13 @@ Using MongoDB (NoSQL Document-oriented database) allow you to manage big collect
 - https://www.guru99.com/nosql-tutorial.html
 - https://www.oracle.com/database/nosql/what-is-nosql/
 
-### (name of technology/feature 3)
+### GraphQL
 
-(Description of a feature or tool - 40ish words - 1 mark)
-(Why/benefits/problems with using this - 40ish words - 1 mark)
-(Provide reference urls to your source of information about this technology - required)
+GraphQL solve the problem of over fetching which saves bandwidth and reducing payload by reducing Waterfall network requests on nested data. In addition, client can specify the shape of each request's response. Furthermore, it just exposes a single HTTP Endpoint ```(/graphql)``` to obtain the necessary data reducing the complexity of managing API Endpoints.
+The downside in GraphQL, it is difficult to construct a simplified cache than it is to implement it using REST.
+
+### References 
+- https://medium.com/open-graphql/graphql-1-140fab436942
+- https://www.robinwieruch.de/why-graphql-advantages-disadvantages-alternatives/#graphql-disadvantages
+- https://www.howtographql.com/basics/1-graphql-is-the-better-rest/
+
