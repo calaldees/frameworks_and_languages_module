@@ -133,9 +133,16 @@ This allow us to handle user input, or add dynamic functionality to the app
 - https://v2.vuejs.org/v2/guide/events.html
 
 
-### 2- Binding data with existing html
+### 2- Binding data
+When we use forms we need to synchronize the form input components state with its corresponding state in JavaScript. The ``` v-model``` directive is used on diffident types of inputs within the form and it automatically expands to various DOM property and event pairings depending on the type it is used on
+```javaScript
+<input v-model="item.user_id" name="user_id" type ="text" placeholder="name">
+```
+Data binding is useful for synchronizing and connecting data sources from the provider and consumer when retrieve the data. Every time data is modified during a data binding process, the elements bound to the data immediately update to reflect the change.
 
-
+### References:
+- https://www.tutoraspire.com/vue-js-data-binding/
+- https://vuejs.org/guide/essentials/forms.html
 
 ### 3- Declarative Rendering
 it allow us to render data to the DOM declaratively and let the framework decide how to display the the data correctly to the user. The "Mustache" syntax ```{{variable}}``` acts as a placeholder for the data to be rendered as shown in the code snipped below:
@@ -265,7 +272,7 @@ The drawback with this tech is when you write an AWS lambda and your business gr
 - https://azure.microsoft.com/en-gb/resources/cloud-computing-dictionary/what-is-serverless-computing/
 - https://www.cloudflare.com/en-gb/learning/serverless/what-is-serverless/
 
-### MongoDB
+### 2- MongoDB
 Using MongoDB (NoSQL Document-oriented database) allow you to manage big collection of unstructured data providing scalability, flexibility unlike SQL database, where it has fixed tables and schema format making handling updates a complex process. In addition, MongoDB accomplish the concept of sharding by dividing data among several MongoDB instances, making it possible to scale horizontally. In case of hardware failure, MongoDB operate across multiple servers, balancing the load and providing redundancy to the data to keep the system operational.
 The downside of MongoDB is that it requires a high memory and it does not support joints like SQL and also limited document size
 
@@ -275,7 +282,7 @@ The downside of MongoDB is that it requires a high memory and it does not suppor
 - https://www.oracle.com/database/nosql/what-is-nosql/
 - https://data-flair.training/blogs/advantages-of-mongodb/
 
-### GraphQL
+### 3- GraphQL
 
 GraphQL solve the problem of over fetching which saves bandwidth and reducing payload by reducing Waterfall network requests on nested data. In addition, client can specify the shape of each request's response. Furthermore, it just exposes a single HTTP Endpoint ```(/graphql)``` to obtain the necessary data reducing the complexity of managing API Endpoints.
 The downside in GraphQL, it is difficult to construct a simplified cache than it is to implement it using REST.
