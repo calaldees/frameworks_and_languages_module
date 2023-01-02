@@ -226,7 +226,7 @@ This is particularly useful technique as it enables the program to start long-ru
 Critique of Server/Client prototype
 ---------------------
 
-### (infinity loop)
+### infinite loop
 
 ``` python
         while True:
@@ -246,9 +246,11 @@ Critique of Server/Client prototype
                         log.exception("InvalidHTTPRequest")
                         continue
 ```
-Noticing here ```while True:```  it initiates an infinite loop that will theoretically run forever, it will keep the server active and listening for a response from the client  
-(Explain why this pattern is problematic - 40ish words 1 mark)
+```while True:```  it initiates an infinite loop that will theoretically run every time as it will keep the server active and listening unless the client make a request/response or forcefully stop, making it hard to maintain the code and lead to possible data loss.
 
+### References:
+- https://tutorial.eyehunts.com/python/while-true-python-while-loop-is-bad-break-out/
+- https://technicqa.com/why-we-use-true-in-while-loop-in-python/#:~:text=%E2%80%9Cwhile%20True%E2%80%9D%20in%20itself%20is%20not%20bad%20practice%2Fstyle%2C,run%20forever%3F%20true%E2%80%A6%20the%20loop%20will%20run%20forever.
 ### (render items)
 
 ``` python
@@ -256,8 +258,7 @@ function renderItems(data) {
 		const $item_list = document.querySelector(`[data-page="items"] ul`);
 		const new_item_element = () => document.querySelector(`[data-page="items"] li`).cloneNode(true);
 ```
-looking at the code in example_client we notice that the rendering is happening all over the place
-(Explain why this pattern is problematic - 40ish words 1 mark)
+Noticing here that rendering data is happening all over the place through a function making it difficult for programmers to assess and understand the code flow (wasted time), while client framework allow efficient templating to render data in one place, therefore there is no need for an addition function to perform rendering.
 
 
 Future Technology Suggestions
