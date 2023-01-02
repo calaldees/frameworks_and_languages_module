@@ -223,7 +223,6 @@ This is particularly useful technique as it enables the program to start long-ru
 - https://www.geeksforgeeks.org/why-we-use-then-method-in-javascript/
 
 
-Critique of Server/Client prototype
 ---------------------
 
 ### infinite loop
