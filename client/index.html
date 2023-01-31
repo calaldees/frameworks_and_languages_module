@@ -93,8 +93,7 @@
     
     <script type="module">
     const { createApp } = Vue
-    //https://github.com/calaldees/frameworks_and_languages_module/blob/main/docs/assignment_hints.md
-    let API = '' //'https://8000-reem313-frameworksandla-lt146dhjlm1.ws-eu74.gitpod.io'
+    let API;
     const urlParams = new URLSearchParams(window.location.search);
 	  const urlAPI = (urlParams.get('api') || DEFAULT_API).replace(/\/$/, '');  // Get api url (and remove trailing slash if present)
     const DEFAULT_API = '/api/v1';  // default to current http(s)://currentHost:currentPort/api/v1'

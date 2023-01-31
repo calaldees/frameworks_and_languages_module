@@ -21,9 +21,9 @@ Having the client running on it's own wouldn't be useful as we need communicate 
 ``` powershell
 clientUrl?api=serverUrl
 ```
-
+// Update this link
 ``` powershell
-https://8001-reem313-frameworksandla-lt146dhjlm1.ws-eu77.gitpod.io/?api=https://8000-reem313-frameworksandla-lt146dhjlm1.ws-eu77.gitpod.io
+https://8001-ca370-frameworksandla-lt146dhjlm1.ws-eu77.gitpod.io/?api=https://8000-ca370-frameworksandla-lt146dhjlm1.ws-eu77.gitpod.io
 ```
 Now the app is ready to view and use.
 

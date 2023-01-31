@@ -1,6 +1,5 @@
 Server
 ======
-This directory include an implementation for the server side service for "Freecycle-Inc". This is a REST API that has been implemented using Express server framework and according the specification stated in the [openapi.yml](https://github.com/Reem-313/frameworks_and_languages_module/blob/main/openapi.yml)
 
 #### Usage
 To run the server you would need the following commands
