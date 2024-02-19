@@ -567,6 +567,14 @@ Material Design (Google)
         * more
 
 
+Shadcn
+------
+
+* [shadcn](https://ui.shadcn.com/)
+    * Component code to in your framework
+* YouTube [UI Libraries Are Dying, Here's Why ](https://www.youtube.com/watch?v=2Q0mWH6g8Fo) 5min superb description
+
+
 Other Projects
 --------------
 
