@@ -39,6 +39,14 @@ Company TechStack
 Question: Cold call for some technologies
 
 
+<details>
+
+unsure of where to put this
+* [Tutorials - Mario Munoz: Web Development With A Python-backed Frontend: Featuring HTMX and Tailwind](https://www.youtube.com/watch?v=YUoflPpVLjQ)
+    * HTMX fills in the missing features from HTML. This looks like a nice stack
+</details>
+
+
 Server Rendering or Client Rendering?
 ------------------------------------
 

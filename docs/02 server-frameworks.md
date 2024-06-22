@@ -390,6 +390,8 @@ https://fastapi.tiangolo.com/features/
 
 Has validators/schema and basic boilerplate for most apps, oauth, auto doc
 
+* [Learning FastAPI on hard-mode: getting out lots of the hardest (aw yeah, geo) data fast](https://www.youtube.com/watch?v=UlhLRp5mbrU) 30min YouTube
+
 ### Pyramid (Python)
 
 * https://trypyramid.com/
