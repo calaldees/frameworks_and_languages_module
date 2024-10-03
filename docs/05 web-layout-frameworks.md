@@ -499,6 +499,8 @@ tailwindcss
     * [Utility First](https://tailwindcss.com/docs/utility-first)
     * [Tailwind CSS is the worst…](https://www.youtube.com/watch?v=lHZwlzOUOZ4)
         * Great commentary on the problems that tailwind is trying to solve
+    * [flyonui](https://flyonui.com/) The Easiest Tailwind CSS Components Library
+      * > FlyonUI is an open-source Tailwind CSS Components Library with semantic classes and powerful JS plugins.
 
 * My opinion
     * Great when used with a client framework with reusable components
