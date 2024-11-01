@@ -5,24 +5,8 @@ Introduction (2 hours)
   * Understand the module content and assessment content
   * Understand the core technologies we will be using
 
-Who am I?
+Introductions: Who is delivering your course?
 ---------
-
-* 7 Years teaching Computing in secondary schools
-    * A-level, Linux, networking, game programming. Part of transition from ICT to Computing.
-* 10 years Software engineering
-    * 2 years - Lead developer of a Citizen Journalism startup
-    * 6 years - Global Radio (full stack web, android dev, lead test and internal tooling engineer)
-    * 6 months - Financial investment platform CI infrastructure
-    * 1.5 years - NHS Genome processing pipeline for cancer and rare disease analysis
-* 5 years Lecturer in Education (teacher training)
-* 3 years Lecturer in Computing
-
-* Side projects
-  * DMX Stage lighting and projector sys (with 3d stage visualiser)
-  * Karaoke System for mobile phones
-  * Lots of other rubbish
-  * Won a number of commercial hack events (2009 to 2012)
 
 
 Module Overview

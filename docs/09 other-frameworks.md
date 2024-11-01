@@ -142,6 +142,7 @@ GraphQL
     * v3 used to be REST based (2020)
         * https://docs.spacexdata.com/#1a1acb6e-0f15-437b-ae16-dcabf24dec9f
     * v4 graphql
+* Medium: [GraphQL server up and running with 50 lines of python](https://medium.com/@fasterpancakes/graphql-server-up-and-running-with-50-lines-of-python-85e8ada9f637)
 
 ### Task: Have a go
 
