@@ -64,6 +64,9 @@ But we have to know why the SPA pattern is problematic.
     * (In a single file we can use) Server Components and Client Components, respectively. Because we can be explicit about where our code runs, we can send less JavaScript to the client
     * Server Components can fetch data directly from within the component (e.g. database, queue, file-store). When that fetch is complete, Server Components can stream that data to the client.
     * https://nextjs.org/
+* [Astro](https://astro.build/)
+  * Server side rendering, but allows this in frontend frameworks like react and vue
+  * [Astro: Design Principles: Server-first](https://docs.astro.build/en/concepts/why-astro/#server-first)
 
 
 Question: What is the problem server side rendering (SSR) is trying to solve.
@@ -258,6 +261,8 @@ Question: What problem is static-site-generation trying to solve?
 Server State Frameworks
 -----------------------
 
+### Astro
+* [Astro: Design Principles: Server first](https://docs.astro.build/en/concepts/why-astro/#server-first)
 ### svelte
 * [Svelte](https://svelte.dev/)
     * Server database and frontend linked - changed to db/state -> automatic frontend event
