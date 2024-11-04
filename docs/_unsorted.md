@@ -4,6 +4,9 @@
     * Webhooks are how one system notifies another system of a state change.
     * > In practical terms, a webhook is simply an HTTP request - usually a POST or GET - with a JSON payload or parameters broadcast from the central system. Much of the modern web is built on this distributed communication pattern.
 
+* YouTube [The problem with frameworks - Uncle Bob](https://www.youtube.com/watch?v=evmZTh7l6UE) 2min30seconds
+  * You are coupled to their way of working
+
 
 Frameworks and Languages
 ========================
