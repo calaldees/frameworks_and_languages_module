@@ -72,3 +72,10 @@ TASK:
 * Demo Cloud IDE server and local cypress client
     * Electron and rewind
 * More in future lectures
+
+
+Documentation
+-------------
+
+* [devdocs.io](https://devdocs.io/)
+    * Offline searchable local documentation for many popular frameworks and languages

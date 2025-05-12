@@ -356,6 +356,10 @@ Abstracting the entire server/client into one amorphous mega blog that deploys o
     * looks like it can be used as an API backend ... but this seems like a sledgehammer to crack a nut
     * https://laravel.com/docs/8.x/responses#strings-arrays
 
+See also
+* [Goravel](https://www.goravel.dev/)
+    * > The framework's design is consistent with Laravel, simplifying the learning curve for PHPers. Kudos to Laravel!
+    * TODO: read more
 
 ### Gin (golang)
 

@@ -381,6 +381,8 @@ Linked in [other-frameworks.md](09 other-frameworks.md)
     * No dependencies.
     * No build-step before it can be used.
 * Without a framework (sometimes called 'vanilla javascript') - patters
+    * [Plain Vanilla](https://plainvanillaweb.com/)
+        * An explainer for doing web development using only vanilla techniques. No tools, no frameworks — just HTML, CSS, and JavaScript.
     * [vanilla-fp](https://github.com/abuseofnotation/vanilla-fp)
         * The no-framework framework for building component-based purely-functional UIs.
     * [VanJS](https://github.com/vanjs-org/van)

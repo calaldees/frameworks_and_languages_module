@@ -71,6 +71,9 @@ But we have to know why the SPA pattern is problematic.
 
 Question: What is the problem server side rendering (SSR) is trying to solve.
 
+* [mizu.js Supercharge your HTML!](https://mizu.sh/)
+    * Can be rendered on the client or server
+
 
 Serverless Architecture
 -----------------------
@@ -277,8 +280,11 @@ Server State Frameworks
         * > the only end result of your actions is that the client-side state (of every client) becomes consistent with the server-side state!
 * [.NET Blazor](https://dusted.codes/dotnet-blazor) Opinion Nov 2023
 ### Phoenix LiveView (Elixir)
-* [Phoenix.LiveView behaviour](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html) 
+* [Phoenix.LiveView behaviour](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html)
     * > LiveView provides rich, real-time user experiences with server-rendered HTML
+* [Hologram](https://hologram.page/)
+    * > Build rich, interactive UIs entirely in Elixir using Hologram's declarative component system. Your client-side code is intelligently transpiled to JavaScript, providing modern frontend capabilities without relying on any JavaScript frameworks.
+    * > Hologram is a full-stack isomorphic Elixir web framework that runs on top of Phoenix. It lets developers create dynamic, interactive web applications entirely in Elixir. Through intelligent code analysis and transformation, Hologram converts the necessary parts of your Elixir code into JavaScript, delivering modern frontend functionality without requiring any JavaScript frameworks or direct JavaScript coding
 ### Dream
 * [Dream](https://github.com/aantron/dream) [docs](https://aantron.github.io/dream/) - Tidy Web framework for OCaml and ReasonML 
     * > Easy-to-use, feature-complete Web framework without boilerplate.
@@ -310,6 +316,13 @@ Cloud First Frameworks?
 * https://www.winglang.io/
     * Modern cloud apps need to be deployed. Deployment is complex and your application wont function without it. So could it be considered that your application and how it's run on the cloud are the same thing? if so, we need a new language/framework?
     * > Infrastructure and code in one language
+
+
+Hyper Scale - Meta/Facebook Infrastructure Overview
+---------------------------------------------------
+
+* [Meta’s Hyperscale Infrastructure: Overview and Insights](https://cacm.acm.org/research/metas-hyperscale-infrastructure-overview-and-insights/)
+    * A look at Meta's planetary-scale computing infrastructure, including some key lessons from its development, as the company pursues its vision of “all global datacenters as a computer.”
 
 
 

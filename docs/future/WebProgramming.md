@@ -235,9 +235,12 @@ accreditation
 NOTE: Would like to consider - verbal presentation assessment
 * > 6. devise efficient computing models to solve sophisticated computing problems and  communicate  these solutions  succinctly  and  accurately  to  a  range  of  audiences;
 
+
 Other Certifications this module aligns with
 --------------------
 
+* [The Odin Project Foundations Course](https://www.theodinproject.com/paths/foundations/courses/foundations)
+* [MDN Learn web development learning path](https://developer.mozilla.org/en-US/docs/Learn).
 * [Exam 70-480: Programming in HTML5 with JavaScript and CSS3](https://learn.microsoft.com/en-us/certifications/exams/70-480)
     * Retired 2021
 * Udemy [Web Development Masterclass & Certifications](https://www.udemy.com/course/become-a-certified-web-developer/)
@@ -248,7 +251,7 @@ Other Certifications this module aligns with
         * £200? 100 hours
     * by Johns Hopkins University - [HTML, CSS, and Javascript for Web Developers](https://www.coursera.org/learn/html-css-javascript-for-web-developers)
     * by University of California, Davis - [Introduction to Web Development](https://www.coursera.org/learn/web-development)
-    * By Meta 
+    * By Meta
         * [Meta Back-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-back-end-developer)
             * £300? 200 Hours
         * [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer)
@@ -264,3 +267,9 @@ Other Certifications this module aligns with
     * 'Web Programming' combined with 'Programming Frameworks' (Vue.js, Express, Mongo)
 * eCornell cornell.edu university - [Web Design and DevelopmentCornell](https://ecornell.cornell.edu/certificates/technology/web-design-and-development/)
     * $4000 3months - part time - 150hours?
+
+
+References
+----------
+
+* [plainvanillaweb.com](https://plainvanillaweb.com/)

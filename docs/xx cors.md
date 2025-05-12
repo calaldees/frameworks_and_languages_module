@@ -12,6 +12,7 @@ CORS
     * > Suppose I accidentally load http://evil.com/, 
         > which sends a request for http://mail.google.com/. 
         > If the SOP were not in place, and I was signed into Gmail, the script at evil.com could see my inbox.
+* [Do we need both CSRF and CORS?](https://smagin.fyi/posts/cross-site-requests/)
 * HTTP Method: [OPTIONS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS) request
     * ```bash
         curl -X OPTIONS http://localhost:8000/ -v
