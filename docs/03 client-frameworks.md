@@ -403,37 +403,37 @@ Thoughts from a lead engineer
 -----------------------------
 
 > My point is that requiring any JavaScript at all for 99% of web apps is a symptom of missing html features.
-> 
+>
 > HTTP has a rich verb syntax, but the supposed "Hyper-text Mark-up Language" only natively supports 2.
 > (GET and POST via <a> click and <form> submit)
-> 
+>
 > Why can't I natively allow buttons to fire HTTP DELETE requests?
 > HTTP also supports a native events source in the form of SSE, why is this not able to trigger state changes natively
-> 
+>
 > Adoption of new declarative syntax at the HTML level would vastly reduce boiler-plate and bloat, due to the fact that implementation
 > would be pushed into the browser
-> --
+>
 > Moreover, I think that the whole idea of the best way to provide UIs to the user is to download a bunch of code and execute it,
 > in order to build a local state which can then be rendered is the wrong abstraction.
-> 
+>
 > I think REST/HATEOAS scales way further than we like to admit, and the server is likely the right place to decide how the DOM changes.
-> 
+>
 > The server saying "When you press this button, come and ask me how the state should be" is much easier to reason about than the client saying
-> "when I make these actions on the UI, update my state like so and then we can periodically (or on another action) try to reconcile this with the server". 
+> "when I make these actions on the UI, update my state like so and then we can periodically (or on another action) try to reconcile this with the server".
 > Offline collaboration apps are the 1% exception to this
 > And even those apps, 99% of their features need not work offline
-> --
+>
 > The fact that we are tempted to build offline collaboration apps in the browser at all is probably a symptom of a larger problem.
 > The web space has had a disproportionate amount of time and resource poured into it's innovation.
-> 
+>
 > As a consequence, the UI tooling is far upstream of what is possible in native environments.
 > This is why we are tempted to build everything as a website, even if from first principles this doesn't make much sense.
-> --
+>
 > The web these days is basically the worlds largest and most unstructured package manager 🤣
-> -- 
+>
 > I think HTMX (and it predecessor intercooler) is the best attempt at this I've seen.
 > However, it goes a bit too far.
-> 
+>
 > I think it's really important to focus on the core idea and try to get it adopted into the HTML standard rather than implement lots of cool extra features
 > It is the best attempt I've seen though, so credit where credit is due
 > The core though of extending HTML to be able to declaratively define how to apply it's next state is precisely correct
