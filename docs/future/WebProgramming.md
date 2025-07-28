@@ -13,6 +13,7 @@ Students are to understand the foundations of web technology (server/client sepa
 The focus of the module is to accrue practical web programming skills.
 By understanding web foundation technologies, students will have the prerequisite knowledge to work with more advanced libraries.
 This module is to be delivered using bare-bones IDEs, standard language libraries and common builtin browser development tools.
+The purpose is to build understanding of the core principles/protocols/patterns the web works on. From scratch, without libraries, just raw text and sockets
 
 
 This module attempts to give students the opportunity to practically interact with a range of core web technologies:
@@ -80,7 +81,7 @@ Learning and Teaching Strategies
 * In industry, it is expected that developers engage with code-base's they are unfamiliar with add features. The final assessment of this module is for students to add a feature to another students project (preferably via a pull-request for students to understand the tooling professional developers collaborate on software).
 
 
-Indicative Assessment 
+Indicative Assessment
 ---------------------
 
 | Name | Type | Module % | Word equivalent |
@@ -184,6 +185,13 @@ Template/Example Projects include:
 Each example is to be short (less than 100 lines) and require no external libraries (with the exception of raw WebSocket handling)
 * WebSocket Echo server
     * provided to students [example](https://github.com/calaldees/channelServer) (can be simplified for class use)
+* Cookies - Make a tracking cookie that stores information between multiple sites (js lib?)
+    * Set by server
+    * Set by client
+    * How they are used cross domain for tracking
+    * They are contentious because unbeknownst to you, someone can put data on your computer and your computer without your knowledge is sending that information out on every request to other machines
+        * Analogy/Example: What if I was to store a racial slur on your machine without your knowledge and your machine starts sending that to other computers every time it communicates with them.
+
 
 References
 ----------

@@ -618,3 +618,4 @@ Further Reading
         {{ template "_table_small" . }}
       </div>
       ```
+* [Vanilla JavaScript support for Tailwind Plus](https://tailwindcss.com/blog/vanilla-js-support-for-tailwind-plus)

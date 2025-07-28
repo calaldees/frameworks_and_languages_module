@@ -332,7 +332,8 @@ Client Further Reading
 * [Sizes of JS frameworks, just minified + minified and gzipped, (React, Angular 2, Vue, Ember)](https://gist.github.com/Restuta/cda69e50a853aa64912d) 2019
     * (cool mini project would be download these from a cdn and list them `ls -lhS`)
 * [JavaScript Bloat in 2024](https://tonsky.me/blog/js-bloat/)
-    * Valid criticism about most webpages taking 5mb+ of javascript. This is madness.
+    * Valid criticism about most webpages taking 5mb+ of javascript.
+    * Size of large popular webapps/pages in kb.
 * MonoCubed [List of 10 Best Front end Frameworks](https://www.monocubed.com/best-front-end-frameworks/)
     * [Ember.js](https://emberjs.com/)
         * build, testing, data layer - the whole set!
