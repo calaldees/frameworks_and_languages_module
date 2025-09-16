@@ -29,6 +29,7 @@ This module attempts to give students the opportunity to practically interact wi
 * Cookies/Sessions
 * JSON
 * Async requests
+    * setTimeout as a promise
 * HTML Offline Storage
 * Simple Deployment mechanisms
 * URL components (scheme, domain, path, hash, query string)
@@ -180,6 +181,8 @@ Template/Example Projects include:
 * Simple Chromecast
     * WebSockets, DOM, Events
     * [js](https://github.com/calaldees/TeachProgramming/blob/9a33e0254e4f9f6330654004208f036b63fa2581/teachprogramming/static/projects/net/disco.md)
+* Simple Browser Extension
+* CORS?
 * Fly the Copter Network?
     * (example TODO) (network every 3 or 4 frames)
 Each example is to be short (less than 100 lines) and require no external libraries (with the exception of raw WebSocket handling)
@@ -281,3 +284,5 @@ References
 ----------
 
 * [plainvanillaweb.com](https://plainvanillaweb.com/)
+* [Why your website should be under 14kB in size](https://endtimes.dev/why-your-website-should-be-under-14kb-in-size/)
+    * 14kb is 10 TCP packets, no need for acks, [[tcp]] slow start. MTU size of 1500bytes (ethernet layer2 limitation)

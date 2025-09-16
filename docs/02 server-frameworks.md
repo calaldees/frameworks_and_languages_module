@@ -284,6 +284,8 @@ Abstracting the entire server/client into one amorphous mega blog that deploys o
         * https://sanicframework.org/en/guide/basics/handlers.html#a-word-about-async
 * [Awesome Sanic](https://github.com/mekicha/awesome-sanic) - A curated list of awesome Sanic resources and extensions
 
+As of 2025; sanic is looking like it's largely abandoned.
+Newer frameworks in this lightweight async space is https://litestar.dev/
 
 
 ### Express.js (javascript)

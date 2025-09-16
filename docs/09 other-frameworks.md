@@ -301,6 +301,8 @@ Server State Frameworks
 
 Question: What problem is the 'DREAM' pattern trying to solve?
 
+TODO: Astro ?
+
 
 Other - TODO:
 ------------
@@ -352,6 +354,12 @@ BlockChain Applications
 
 
 Question: What problems are blockchain applications trying to solve?
+
+
+No Framework
+------------
+
+* [Why I Hate Frameworks](https://minds.md/benji/frameworks)
 
 
 Summary?

@@ -378,6 +378,8 @@ Linked in [other-frameworks.md](09 other-frameworks.md)
 * [How to OVER Engineer a Website // What is a Tech Stack?](https://www.youtube.com/watch?v=Sxxw3qtb3_g) YouTube 11min FireShip
     * Talks though all the tech for client, server, ci, containers and then suggests a cutdown concept
     * [stackshare.io/stacks](https://stackshare.io/stacks) - Popular Tech Stacks: The open source tools and SaaS behind popular tech companies
+* [Introducing XMLUI](https://blog.jonudell.net/2025/07/18/introducing-xmlui/)
+    * Getting away from html and js and going back to the 90's
 
 
 No Framework
@@ -398,6 +400,7 @@ Modern browsers are exceptionally capable and standardized. There is no need for
 * https://htmx.org/
     * > htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext
     * > htmx finished 2nd in the 2023 JavaScript Rising Stars "Front-end Frameworks" category, just behind React (htmx is a library, btw) and #10 overall! Thank you to everyone who starred us!
+    * [HTMX is hard, so let's get it right (Part 1)](https://github.com/BookOfCooks/blog/blob/master/htmx-is-hard-so-lets-get-it-right.md)
 
 
 Thoughts from a lead engineer
