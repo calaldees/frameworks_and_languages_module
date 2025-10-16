@@ -393,6 +393,7 @@ Modern browsers are exceptionally capable and standardized. There is no need for
 * Without a framework (sometimes called 'vanilla javascript') - patters
     * [Plain Vanilla](https://plainvanillaweb.com/)
         * An explainer for doing web development using only vanilla techniques. No tools, no frameworks — just HTML, CSS, and JavaScript.
+    * [Just fucking use HTML](https://justfuckingusehtml.com/)
     * [vanilla-fp](https://github.com/abuseofnotation/vanilla-fp)
         * The no-framework framework for building component-based purely-functional UIs.
     * [VanJS](https://github.com/vanjs-org/van)

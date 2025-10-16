@@ -280,6 +280,7 @@ Server State Frameworks
         * > the only end result of your actions is that the client-side state (of every client) becomes consistent with the server-side state!
 * [.NET Blazor](https://dusted.codes/dotnet-blazor) Opinion Nov 2023
 ### Phoenix LiveView (Elixir)
+* [Why I chose Phoenix LiveView over Rails, Laravel, and Next.js ](https://akarshc.com/post/phoenix-for-my-project.html) 2025 [HN Comments](https://news.ycombinator.com/item?id=45605291)
 * [Phoenix.LiveView behaviour](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html)
     * > LiveView provides rich, real-time user experiences with server-rendered HTML
 * [Hologram](https://hologram.page/)
@@ -302,6 +303,10 @@ Server State Frameworks
 Question: What problem is the 'DREAM' pattern trying to solve?
 
 TODO: Astro ?
+
+### Hyrid Frameworks
+
+* [HyperFlask](https://hyperflask.dev/): Python Flask + HTMx [HN Comments](https://news.ycombinator.com/item?id=45604673)
 
 
 Other - TODO:
@@ -356,10 +361,20 @@ BlockChain Applications
 Question: What problems are blockchain applications trying to solve?
 
 
+'Local First' Web Development
+-----------------------
+
+* [localfirstweb.dev](https://localfirstweb.dev/)
+    * > So, you want to build an app that has its data co-located with its UI? That works offline? That synchronizes between clients? And that lets its users own their data?
+* [Why Local-First Apps Haven’t Become Popular?](https://marcobambini.substack.com/p/why-local-first-apps-havent-become)
+    * > Offline-first apps promise instant loading and privacy, but in practice, very few apps get offline support because getting sync right is surprisingly hard.
+
+
 No Framework
 ------------
 
 * [Why I Hate Frameworks](https://minds.md/benji/frameworks)
+* [Just fucking use HTML](https://justfuckingusehtml.com/)
 
 
 Summary?
