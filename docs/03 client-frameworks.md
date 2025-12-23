@@ -381,6 +381,12 @@ Linked in [other-frameworks.md](09 other-frameworks.md)
 * [Introducing XMLUI](https://blog.jonudell.net/2025/07/18/introducing-xmlui/)
     * Getting away from html and js and going back to the 90's
 
+* [I Built the Same App 10 Times: Evaluating Frameworks for Mobile Performance](https://www.lorenstew.art/blog/10-kanban-boards/)
+    * Technical comparison of all the big client frameworks with insights into how they work
+* [patterns.dev](https://www.patterns.dev/) Improve how you architect webapps
+    * > Patterns.dev is a free online resource on design, rendering, and performance patterns for building powerful web apps with vanilla JavaScript or modern frameworks.
+
+
 
 No Framework
 ------------
@@ -402,6 +408,8 @@ Modern browsers are exceptionally capable and standardized. There is no need for
     * > htmx gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext
     * > htmx finished 2nd in the 2023 JavaScript Rising Stars "Front-end Frameworks" category, just behind React (htmx is a library, btw) and #10 overall! Thank you to everyone who starred us!
     * [HTMX is hard, so let's get it right (Part 1)](https://github.com/BookOfCooks/blog/blob/master/htmx-is-hard-so-lets-get-it-right.md)
+* [HyperClay](https://hyperclay.com/)
+    * > Experience the Zen of making, hosting, and sharing great software in a single, portable, self-updating, vanilla HTML file
 
 
 Thoughts from a lead engineer

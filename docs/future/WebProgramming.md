@@ -194,6 +194,10 @@ Each example is to be short (less than 100 lines) and require no external librar
     * How they are used cross domain for tracking
     * They are contentious because unbeknownst to you, someone can put data on your computer and your computer without your knowledge is sending that information out on every request to other machines
         * Analogy/Example: What if I was to store a racial slur on your machine without your knowledge and your machine starts sending that to other computers every time it communicates with them.
+    * Session cookies
+        * Encrypted session cookies with server side secret
+            * [python structure to base64](https://github.com/calaldees/libs/blob/571736347ddf43ca974316a1d18fef4ead6eac54/python3/calaldees/crypt.py#L1)
+        * Signatures (pub/private) []()
 
 
 References

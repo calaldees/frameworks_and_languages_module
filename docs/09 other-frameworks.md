@@ -375,6 +375,7 @@ No Framework
 
 * [Why I Hate Frameworks](https://minds.md/benji/frameworks)
 * [Just fucking use HTML](https://justfuckingusehtml.com/)
+    * [React Is Fucking Cool, You Dumbass](https://reactisfuckingcool.com/)
 
 
 Summary?
