@@ -583,6 +583,9 @@ Shadcn
 Other Projects
 --------------
 
+* GitHub List [Awesome CSS Frameworks](https://github.com/troxler/awesome-css-frameworks)
+    * Most of the frameworks mentioned are on the list
+
 * https://foundation.zurb.com/
 * https://bulma.io/
     * just css (no js)
@@ -591,6 +594,8 @@ Other Projects
     * Just write html and the default styles just look good - see animated demo on main page
 * [simple.css](https://simplecss.org/) - A classless CSS framework that makes semantic HTML look good.
 
+* [SmolCSS](https://smolcss.dev/) - Minimal snippets for modern CSS layouts and components
+    * Not a framework - just a zoo of examples
 
 Other Addons
 ------------

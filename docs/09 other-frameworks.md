@@ -144,11 +144,19 @@ GraphQL
     * (The queries are a little verbose, by hand. Normally you use an 'explorer' to get docs and schema)
     * StackOverflow: [How to request the schema from a GraphQL service using curl?](https://stackoverflow.com/a/61468962/3356840)
 * A GraphQL Server could be configured/backed by multiple databases, rest APIs, or static files. One interface/endpoint is now explorable
-* SpaceX 
+* SpaceX
     * v3 used to be REST based (2020)
         * https://docs.spacexdata.com/#1a1acb6e-0f15-437b-ae16-dcabf24dec9f
     * v4 graphql
 * Medium: [GraphQL server up and running with 50 lines of python](https://medium.com/@fasterpancakes/graphql-server-up-and-running-with-50-lines-of-python-85e8ada9f637)
+* problems with graphql
+    * [GraphQL: the enterprise honeymoon is over](https://johnjames.blog/posts/graphql-the-enterprise-honeymoon-is-over) 2025
+        * your GraphQL layer still has to overfetch from downstream REST APIs, then reshape the response. You didn’t eliminate overfetching. You just moved it down a layer
+        * observability is worse by default
+            * With GraphQL, a 200 can still mean partial or full failure.
+        * learning curve creates friction, especially when teams need to move fast. REST is boring, but boring scales extremely well.
+        * error handling is harder than it needs to be
+    * [GraphQL vs. REST APIs: Why you shouldn’t use GraphQL](https://blog.logrocket.com/graphql-vs-rest-api-why-you-shouldnt-use-graphql/)
 
 ### Task: Have a go
 
