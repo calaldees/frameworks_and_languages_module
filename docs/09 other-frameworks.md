@@ -272,6 +272,9 @@ Question: What problem is static-site-generation trying to solve?
 Server State Frameworks
 -----------------------
 
+* [HTML over WebSockets: real-time SPAs with barely any JavaScript](https://en.andros.dev/blog/ef4968f5/html-over-websockets-real-time-spas-with-barely-any-javascript/)
+    * Awesome description to the server-rendered-html+websocket+js-shim-to-insert-html
+
 ### Astro
 * [Astro: Design Principles: Server first](https://docs.astro.build/en/concepts/why-astro/#server-first)
 ### svelte
